@@ -1,3 +1,3 @@
-etc/cmake/
-etc/dox/
+/etc/cmake/
+/etc/dox/
 .gitignore

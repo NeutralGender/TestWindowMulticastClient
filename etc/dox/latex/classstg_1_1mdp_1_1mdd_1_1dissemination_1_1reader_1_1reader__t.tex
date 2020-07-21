@@ -1,0 +1,95 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{}\doxysection{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::reader\+\_\+t$<$ T $>$ Class Template Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}\index{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}}
+
+
+High-\/level module for reading files.  
+
+
+
+
+{\ttfamily \#include $<$reader.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a3cb402333275fc79f2a2bf918412193d}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a3cb402333275fc79f2a2bf918412193d}} 
+using {\bfseries addr\+\_\+data} = std\+::multimap$<$ std\+::string, std\+::string $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a612d57ceadff77e86859b143e8447f3b}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a612d57ceadff77e86859b143e8447f3b}} 
+{\bfseries reader\+\_\+t} (T \&api\+\_\+reader)
+\item 
+\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{reader\+\_\+t}} \& \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_aac6aa2070883ce2e83cbcd3947a425f2}{open}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Open file. \end{DoxyCompactList}\item 
+std\+::tuple$<$ u\+\_\+int32\+\_\+t, char $\ast$ $>$ \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a1f587ed030180ffeccd61df3d3bcf34b}{read}} ()
+\begin{DoxyCompactList}\small\item\em Read file. \end{DoxyCompactList}\item 
+addr\+\_\+data \& \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_af2eda38eb8ae78d874f9e13843bd9051}{get\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Get the data object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class stg\+::mdp\+::mdd\+::dissemination\+::reader\+::reader\+\_\+t$<$ T $>$}
+
+High-\/level module for reading files. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_af2eda38eb8ae78d874f9e13843bd9051}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_af2eda38eb8ae78d874f9e13843bd9051}} 
+\index{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+addr\+\_\+data\& \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::reader\+\_\+t}}$<$ T $>$\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the data object. 
+
+\begin{DoxyReturn}{Returns}
+const addr\+\_\+data\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_aac6aa2070883ce2e83cbcd3947a425f2}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_aac6aa2070883ce2e83cbcd3947a425f2}} 
+\index{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}!open@{open}}
+\index{open@{open}!stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{reader\+\_\+t}}\& \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::reader\+\_\+t}}$<$ T $>$\+::open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & captured package filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{reader\+\_\+t}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a1f587ed030180ffeccd61df3d3bcf34b}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t_a1f587ed030180ffeccd61df3d3bcf34b}} 
+\index{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}!read@{read}}
+\index{read@{read}!stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$@{stg::mdp::mdd::dissemination::reader::reader\_t$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::tuple$<$u\+\_\+int32\+\_\+t, char$\ast$$>$ \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::reader\+\_\+t}}$<$ T $>$\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+string} & container for data from file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/dissemination/reader/reader.\+hpp\end{DoxyCompactItemize}

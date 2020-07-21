@@ -1,0 +1,73 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer}{}\doxysection{stg\+::mdp\+::mdd\+::server\+::prod\+::producer Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer}\index{stg::mdp::mdd::server::prod::producer@{stg::mdp::mdd::server::prod::producer}}
+
+
+X\+R\+I\+NG producer.  
+
+
+
+
+{\ttfamily \#include $<$producer.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer_a10068b669cb55d3c58360848878277a5}{produce}} (\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&rng, \mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&sem)
+\begin{DoxyCompactList}\small\item\em Write data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer_a76dd4eaffad76d409bc4a867b0ef66f9}{test\+\_\+produce}} (\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&rng, \mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&sem, \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{reader\+\_\+t}}$<$ T $>$ \&reader)
+\begin{DoxyCompactList}\small\item\em Test X\+R\+I\+NG producer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+X\+R\+I\+NG producer. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer_a10068b669cb55d3c58360848878277a5}\label{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer_a10068b669cb55d3c58360848878277a5}} 
+\index{stg::mdp::mdd::server::prod::producer@{stg::mdp::mdd::server::prod::producer}!produce@{produce}}
+\index{produce@{produce}!stg::mdp::mdd::server::prod::producer@{stg::mdp::mdd::server::prod::producer}}
+\doxysubsubsection{\texorpdfstring{produce()}{produce()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::server\+::prod\+::producer\+::produce (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&}]{rng,  }\item[{\mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&}]{sem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rng} & X\+R\+I\+NG instance \\
+\hline
+{\em sem} & wait handler \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer_a76dd4eaffad76d409bc4a867b0ef66f9}\label{classstg_1_1mdp_1_1mdd_1_1server_1_1prod_1_1producer_a76dd4eaffad76d409bc4a867b0ef66f9}} 
+\index{stg::mdp::mdd::server::prod::producer@{stg::mdp::mdd::server::prod::producer}!test\_produce@{test\_produce}}
+\index{test\_produce@{test\_produce}!stg::mdp::mdd::server::prod::producer@{stg::mdp::mdd::server::prod::producer}}
+\doxysubsubsection{\texorpdfstring{test\_produce()}{test\_produce()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void stg\+::mdp\+::mdd\+::server\+::prod\+::producer\+::test\+\_\+produce (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&}]{rng,  }\item[{\mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&}]{sem,  }\item[{\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{reader\+\_\+t}}$<$ T $>$ \&}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test X\+R\+I\+NG producer. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & reader low-\/level module \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em rng} & X\+R\+I\+NG instance \\
+\hline
+{\em sem} & wait handler \\
+\hline
+{\em reader} & multicast captured data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/dissemination/server/producer/producer.\+hpp\end{DoxyCompactItemize}

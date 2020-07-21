@@ -1,0 +1,189 @@
+\hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t}{}\doxysection{stg\+::ai\+::xring\+::xslot\+\_\+t Class Reference}
+\label{classstg_1_1ai_1_1xring_1_1xslot__t}\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+
+
+{\ttfamily \#include $<$slot.\+hpp$>$}
+
+
+
+Inheritance diagram for stg\+::ai\+::xring\+::xslot\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classstg_1_1ai_1_1xring_1_1xslot__t__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for stg\+::ai\+::xring\+::xslot\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classstg_1_1ai_1_1xring_1_1xslot__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionstg_1_1ai_1_1xring_1_1xslot__t_1_1____header__type}{\+\_\+\+\_\+header\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Slot header as bitfield. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a5dea27a3f3b8d46286bff51922edea25}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a5dea27a3f3b8d46286bff51922edea25}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a5dea27a3f3b8d46286bff51922edea25}{xslot\+\_\+t}} (capacity\+\_\+type chunks, sequence\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_aa4f02804c9e1a3a2123520d1262b3094}{seq}})
+\begin{DoxyCompactList}\small\item\em Construction allowed only with capacity expressed in number of cache lines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_aa4f02804c9e1a3a2123520d1262b3094}\label{classstg_1_1ai_1_1xring_1_1xslot__t_aa4f02804c9e1a3a2123520d1262b3094}} 
+constexpr sequence\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_aa4f02804c9e1a3a2123520d1262b3094}{seq}} () const
+\begin{DoxyCompactList}\small\item\em Provides sequence of slot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}\label{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}} 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}{payload}} ()
+\begin{DoxyCompactList}\small\item\em Acquires type-\/casted user data block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_ad68c3179d9634e1aca48f784d7caa7f8}\label{classstg_1_1ai_1_1xring_1_1xslot__t_ad68c3179d9634e1aca48f784d7caa7f8}} 
+void \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad68c3179d9634e1aca48f784d7caa7f8}{commit}} ()
+\begin{DoxyCompactList}\small\item\em Sets sub\+\_\+barrier flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_abe375382b0982fc5bcc0f0d06fee99eb}{treat\+\_\+as\+\_\+hole}} ()
+\item 
+bool \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a831cc1a41664209c3231d58f1a0dd61f}{is\+\_\+committed}} () const
+\item 
+bool \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a15fb22ffc6144c9b70d20420d6e613a6}{is\+\_\+hole\+\_\+block}} () const
+\item 
+auto const  \& \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_aca48c36e714a65b7a2ca303f13c491cb}{flags\+\_\+struct}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a9740ff70f3775d1b67d4c6d7c437a9a4}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a9740ff70f3775d1b67d4c6d7c437a9a4}} 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t}{xslot\+\_\+t}} $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a9740ff70f3775d1b67d4c6d7c437a9a4}{slot}} (T $\ast$\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}{payload}})
+\begin{DoxyCompactList}\small\item\em Acquires slot pointer from user data pointer. \end{DoxyCompactList}\item 
+static auto \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a5b4a7c35483bc3fafb64e36dc195c4e1}{commit}} (unsigned char $\ast$\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}{payload}})
+\item 
+static auto \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad630b74bc5898d6f7dbcdfd8e3fefd59}{is\+\_\+committed}} (unsigned char $\ast$\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}{payload}})
+\item 
+static auto \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a61f4fa7572a01a2f158280c4840ee9a5}{is\+\_\+hole\+\_\+block}} (unsigned char $\ast$\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}{payload}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a13121735355bed4c72f748e9bffa74f0}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a13121735355bed4c72f748e9bffa74f0}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a13121735355bed4c72f748e9bffa74f0}{xslot\+\_\+t}} ()=delete
+\begin{DoxyCompactList}\small\item\em Default construction was disabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a6949eadca7fabfe99bb370d36ffa52a4}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a6949eadca7fabfe99bb370d36ffa52a4}} 
+static constexpr uint {\bfseries hdr\+\_\+size} ()
+\item 
+static \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t}{xslot\+\_\+t}} $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_a1d3edc11ae201e7caec9ff0aa12c96f7}{payload2origin}} (unsigned char $\ast$\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_ad0f865b0e0dc6efe5bf8279cd245bdc2}{payload}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a7c3df2c932caca0212b294fac26360e8}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a7c3df2c932caca0212b294fac26360e8}} 
+union \mbox{\hyperlink{unionstg_1_1ai_1_1xring_1_1xslot__t_1_1____header__type}{stg\+::ai\+::xring\+::xslot\+\_\+t\+::\+\_\+\+\_\+header\+\_\+type}} {\bfseries hdr}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_aa5b5ec85e9aaaba1ed9825f312229271}\label{classstg_1_1ai_1_1xring_1_1xslot__t_aa5b5ec85e9aaaba1ed9825f312229271}} 
+unsigned char \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t_aa5b5ec85e9aaaba1ed9825f312229271}{payload\+\_\+data}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Data payload -\/ fake field, slot must consist at least 64 bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_ae9b65f60ba3323493a8dd323ad910a3b}\label{classstg_1_1ai_1_1xring_1_1xslot__t_ae9b65f60ba3323493a8dd323ad910a3b}} 
+class {\bfseries xring\+\_\+mman\+\_\+t}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a02f8c8d2d279096eecf3ed75653d3b91}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a02f8c8d2d279096eecf3ed75653d3b91}} 
+{\footnotesize template$<$xring\+\_\+producer Producer\+Type$>$ }\\class {\bfseries xring\+\_\+t}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a84c4da94b73a7651397d7d4871604c26}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a84c4da94b73a7651397d7d4871604c26}} 
+{\footnotesize template$<$xring\+\_\+producer Producer\+Type$>$ }\\class {\bfseries xring\+\_\+alloc\+\_\+t}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_aa0b33ebd563b318fd21b02aafb03c39b}\label{classstg_1_1ai_1_1xring_1_1xslot__t_aa0b33ebd563b318fd21b02aafb03c39b}} 
+class {\bfseries xring\+\_\+fetch\+\_\+t}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+X\+R\+I\+NG slot 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a5b4a7c35483bc3fafb64e36dc195c4e1}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a5b4a7c35483bc3fafb64e36dc195c4e1}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!commit@{commit}}
+\index{commit@{commit}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily static auto stg\+::ai\+::xring\+::xslot\+\_\+t\+::commit (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sets \textquotesingle{}sub\+\_\+barrier\textquotesingle{} flag for slot from user data 
+\begin{DoxyParams}{Parameters}
+{\em payload} & Pointer to user data (excluded slot header) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_aca48c36e714a65b7a2ca303f13c491cb}\label{classstg_1_1ai_1_1xring_1_1xslot__t_aca48c36e714a65b7a2ca303f13c491cb}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!flags\_struct@{flags\_struct}}
+\index{flags\_struct@{flags\_struct}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{flags\_struct()}{flags\_struct()}}
+{\footnotesize\ttfamily auto const\& stg\+::ai\+::xring\+::xslot\+\_\+t\+::flags\+\_\+struct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter returns enclosed struct \begin{DoxyReturn}{Returns}
+struct \+\_\+\+\_\+flags\+\_\+type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a831cc1a41664209c3231d58f1a0dd61f}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a831cc1a41664209c3231d58f1a0dd61f}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!is\_committed@{is\_committed}}
+\index{is\_committed@{is\_committed}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{is\_committed()}{is\_committed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool stg\+::ai\+::xring\+::xslot\+\_\+t\+::is\+\_\+committed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks C\+O\+M\+M\+IT status flag \begin{DoxyReturn}{Returns}
+True if C\+O\+M\+M\+IT flag set, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_ad630b74bc5898d6f7dbcdfd8e3fefd59}\label{classstg_1_1ai_1_1xring_1_1xslot__t_ad630b74bc5898d6f7dbcdfd8e3fefd59}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!is\_committed@{is\_committed}}
+\index{is\_committed@{is\_committed}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{is\_committed()}{is\_committed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static auto stg\+::ai\+::xring\+::xslot\+\_\+t\+::is\+\_\+committed (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Checks \textquotesingle{}sub\+\_\+barrier\textquotesingle{} flag for slot from user data \begin{DoxyReturn}{Returns}
+True if \textquotesingle{}sub\+\_\+barrier\textquotesingle{} flag set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a15fb22ffc6144c9b70d20420d6e613a6}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a15fb22ffc6144c9b70d20420d6e613a6}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!is\_hole\_block@{is\_hole\_block}}
+\index{is\_hole\_block@{is\_hole\_block}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{is\_hole\_block()}{is\_hole\_block()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool stg\+::ai\+::xring\+::xslot\+\_\+t\+::is\+\_\+hole\+\_\+block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks that slot represents hole block \begin{DoxyReturn}{Returns}
+True for hole block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a61f4fa7572a01a2f158280c4840ee9a5}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a61f4fa7572a01a2f158280c4840ee9a5}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!is\_hole\_block@{is\_hole\_block}}
+\index{is\_hole\_block@{is\_hole\_block}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{is\_hole\_block()}{is\_hole\_block()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static auto stg\+::ai\+::xring\+::xslot\+\_\+t\+::is\+\_\+hole\+\_\+block (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Checks \textquotesingle{}hole\+\_\+block\textquotesingle{} flag for slot from user data \begin{DoxyReturn}{Returns}
+True if \textquotesingle{}hole\+\_\+block\textquotesingle{} flag set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_a1d3edc11ae201e7caec9ff0aa12c96f7}\label{classstg_1_1ai_1_1xring_1_1xslot__t_a1d3edc11ae201e7caec9ff0aa12c96f7}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!payload2origin@{payload2origin}}
+\index{payload2origin@{payload2origin}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{payload2origin()}{payload2origin()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t}{xslot\+\_\+t}}$\ast$ stg\+::ai\+::xring\+::xslot\+\_\+t\+::payload2origin (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+Transforms userdata address into slot origin address 
+\begin{DoxyParams}{Parameters}
+{\em payload} & Pointer to user data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to corresponding slot 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xslot__t_abe375382b0982fc5bcc0f0d06fee99eb}\label{classstg_1_1ai_1_1xring_1_1xslot__t_abe375382b0982fc5bcc0f0d06fee99eb}} 
+\index{stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}!treat\_as\_hole@{treat\_as\_hole}}
+\index{treat\_as\_hole@{treat\_as\_hole}!stg::ai::xring::xslot\_t@{stg::ai::xring::xslot\_t}}
+\doxysubsubsection{\texorpdfstring{treat\_as\_hole()}{treat\_as\_hole()}}
+{\footnotesize\ttfamily void stg\+::ai\+::xring\+::xslot\+\_\+t\+::treat\+\_\+as\+\_\+hole (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets slot as hole block 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/xring/\mbox{\hyperlink{xring_2slot_8hpp}{slot.\+hpp}}\end{DoxyCompactItemize}

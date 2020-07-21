@@ -1,0 +1,7 @@
+<map id="stg::mdp::mdd::mcast::conf::mcast_conf" name="stg::mdp::mdd::mcast::conf::mcast_conf">
+<area shape="rect" id="node1" title=" " alt="" coords="323,133,487,174"/>
+<area shape="rect" id="node2" href="$structstg_1_1mdp_1_1mdd_1_1mcast_1_1conf_1_1multicast__conf_1_1client_1_1SSM.html" title=" " alt="" coords="5,5,169,61"/>
+<area shape="rect" id="node3" href="$structstg_1_1mdp_1_1mdd_1_1mcast_1_1conf_1_1multicast__conf_1_1client.html" title=" " alt="" coords="5,85,169,141"/>
+<area shape="rect" id="node4" href="$structstg_1_1mdp_1_1mdd_1_1mcast_1_1conf_1_1multicast__conf_1_1server.html" title=" " alt="" coords="5,165,169,221"/>
+<area shape="rect" id="node5" href="$structstg_1_1mdp_1_1mdd_1_1mcast_1_1conf_1_1multicast__conf_1_1client_1_1ASM.html" title=" " alt="" coords="5,245,169,301"/>
+</map>

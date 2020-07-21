@@ -1,0 +1,7 @@
+<map id="stg::ai::xring::xring_fetch_t" name="stg::ai::xring::xring_fetch_t">
+<area shape="rect" id="node1" title="XRING fetcher API." alt="" coords="53,199,197,240"/>
+<area shape="rect" id="node2" href="$classstg_1_1ai_1_1noncopyable.html" title=" " alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node3" href="$classstg_1_1ai_1_1xring_1_1xring__mman__t.html" title=" " alt="" coords="181,95,325,136"/>
+<area shape="rect" id="node4" href="$classstg_1_1ai_1_1xring_1_1xring__conf.html" title=" " alt="" coords="183,5,362,32"/>
+<area shape="rect" id="node5" href="$classstg_1_1ai_1_1spinlock__t.html" title=" " alt="" coords="386,5,522,32"/>
+</map>

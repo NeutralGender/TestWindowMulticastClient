@@ -1,0 +1,13 @@
+<map id="include/stg/ai/xring/conf.hpp" name="include/stg/ai/xring/conf.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="205,5,352,47"/>
+<area shape="rect" id="node2" href="$xring_2mman_8hpp_source.html" title=" " alt="" coords="205,95,352,136"/>
+<area shape="rect" id="node4" href="$xring_8hpp.html" title=" " alt="" coords="301,273,448,315"/>
+<area shape="rect" id="node5" href="$xring__api_8hpp.html" title=" " alt="" coords="5,370,152,411"/>
+<area shape="rect" id="node3" href="$xring_2fetch_8hpp.html" title=" " alt="" coords="180,184,327,225"/>
+<area shape="rect" id="node6" href="$client_8hpp_source.html" title=" " alt="" coords="179,571,338,627"/>
+<area shape="rect" id="node7" href="$client_2producer_2producer_8hpp_source.html" title=" " alt="" coords="177,363,349,419"/>
+<area shape="rect" id="node9" href="$consumer_8hpp_source.html" title=" " alt="" coords="424,363,589,419"/>
+<area shape="rect" id="node10" href="$server_2producer_2producer_8hpp_source.html" title=" " alt="" coords="614,363,786,419"/>
+<area shape="rect" id="node11" href="$server_8hpp_source.html" title=" " alt="" coords="680,467,843,523"/>
+<area shape="rect" id="node8" href="$arbitrator_8hpp_source.html" title=" " alt="" coords="169,467,349,523"/>
+</map>

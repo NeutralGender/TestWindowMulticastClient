@@ -1,0 +1,5 @@
+<map id="stg::ai::chrono::time_barrier" name="stg::ai::chrono::time_barrier">
+<area shape="rect" id="node1" title=" " alt="" coords="81,109,233,151"/>
+<area shape="rect" id="node2" href="$structstg_1_1ai_1_1chrono_1_1tm__point.html" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" id="node3" href="$classstg_1_1ai_1_1spinlock__t.html" title=" " alt="" coords="170,13,306,39"/>
+</map>

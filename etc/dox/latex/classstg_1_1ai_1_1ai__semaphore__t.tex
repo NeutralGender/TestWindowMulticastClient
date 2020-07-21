@@ -1,0 +1,71 @@
+\hypertarget{classstg_1_1ai_1_1ai__semaphore__t}{}\doxysection{stg\+::ai\+::ai\+\_\+semaphore\+\_\+t Class Reference}
+\label{classstg_1_1ai_1_1ai__semaphore__t}\index{stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}}
+
+
+{\ttfamily \#include $<$semaphore.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1ai__semaphore__t_ac44192f0bfb1bb8f510b24ce19a5f988}{ai\+\_\+semaphore\+\_\+t}} (unsigned counter)
+\item 
+void \mbox{\hyperlink{classstg_1_1ai_1_1ai__semaphore__t_ac6993672272efc3c9eba443ad5a73698}{wake}} ()
+\item 
+void \mbox{\hyperlink{classstg_1_1ai_1_1ai__semaphore__t_a8cdfdf666b04dc2edf02688edc9b24fd}{wait}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1ai__semaphore__t_a64951188815206f8a856125722dff5f2}\label{classstg_1_1ai_1_1ai__semaphore__t_a64951188815206f8a856125722dff5f2}} 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classstg_1_1ai_1_1ai__semaphore__t_a64951188815206f8a856125722dff5f2}{cv}}
+\begin{DoxyCompactList}\small\item\em Semaphore wait handle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1ai__semaphore__t_ae042e3dc5809df25b2debedeac2e5a8f}\label{classstg_1_1ai_1_1ai__semaphore__t_ae042e3dc5809df25b2debedeac2e5a8f}} 
+std\+::atomic$<$ unsigned $>$ \mbox{\hyperlink{classstg_1_1ai_1_1ai__semaphore__t_ae042e3dc5809df25b2debedeac2e5a8f}{semaphore\+\_\+value}} \{ 1 \}
+\begin{DoxyCompactList}\small\item\em Semaphore value (decreasing) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1ai__semaphore__t_ad5cb13825b295cb7abd8e315bc76383b}\label{classstg_1_1ai_1_1ai__semaphore__t_ad5cb13825b295cb7abd8e315bc76383b}} 
+std\+::mutex \mbox{\hyperlink{classstg_1_1ai_1_1ai__semaphore__t_ad5cb13825b295cb7abd8e315bc76383b}{mx}}
+\begin{DoxyCompactList}\small\item\em Mutex for CV and guards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Decreasing semaphore
+
+Usually handles when we need barrier before numbers of threads are started \begin{DoxyNote}{Note}
+Constructed wait handle for single event by default 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1ai__semaphore__t_ac44192f0bfb1bb8f510b24ce19a5f988}\label{classstg_1_1ai_1_1ai__semaphore__t_ac44192f0bfb1bb8f510b24ce19a5f988}} 
+\index{stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}!ai\_semaphore\_t@{ai\_semaphore\_t}}
+\index{ai\_semaphore\_t@{ai\_semaphore\_t}!stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}}
+\doxysubsubsection{\texorpdfstring{ai\_semaphore\_t()}{ai\_semaphore\_t()}}
+{\footnotesize\ttfamily stg\+::ai\+::ai\+\_\+semaphore\+\_\+t\+::ai\+\_\+semaphore\+\_\+t (\begin{DoxyParamCaption}\item[{unsigned}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct semaphore 
+\begin{DoxyParams}{Parameters}
+{\em counter} & Decreasing counter \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1ai__semaphore__t_a8cdfdf666b04dc2edf02688edc9b24fd}\label{classstg_1_1ai_1_1ai__semaphore__t_a8cdfdf666b04dc2edf02688edc9b24fd}} 
+\index{stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}!wait@{wait}}
+\index{wait@{wait}!stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void stg\+::ai\+::ai\+\_\+semaphore\+\_\+t\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Waits for semaphore opens (control variable becomes zero) \mbox{\Hypertarget{classstg_1_1ai_1_1ai__semaphore__t_ac6993672272efc3c9eba443ad5a73698}\label{classstg_1_1ai_1_1ai__semaphore__t_ac6993672272efc3c9eba443ad5a73698}} 
+\index{stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}!wake@{wake}}
+\index{wake@{wake}!stg::ai::ai\_semaphore\_t@{stg::ai::ai\_semaphore\_t}}
+\doxysubsubsection{\texorpdfstring{wake()}{wake()}}
+{\footnotesize\ttfamily void stg\+::ai\+::ai\+\_\+semaphore\+\_\+t\+::wake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Woke semaphore
+
+Usually notifies semaphore about an event 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/\mbox{\hyperlink{semaphore_8hpp}{semaphore.\+hpp}}\end{DoxyCompactItemize}

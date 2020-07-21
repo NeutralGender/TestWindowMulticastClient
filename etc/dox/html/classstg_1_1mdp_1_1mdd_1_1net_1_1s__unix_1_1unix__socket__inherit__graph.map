@@ -1,0 +1,10 @@
+<map id="stg::mdp::mdd::net::s_unix::unix_socket" name="stg::mdp::mdd::net::s_unix::unix_socket">
+<area shape="rect" id="node1" title="Abstract class for native unix sockets." alt="" coords="199,133,356,174"/>
+<area shape="rect" id="node3" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1client_1_1client__socket.html" title=" " alt="" coords="409,85,569,141"/>
+<area shape="rect" id="node6" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1server_1_1server__socket.html" title=" " alt="" coords="404,165,575,221"/>
+<area shape="rect" id="node2" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1socket__t.html" title="Common interface for unix, multicast, etc sockets." alt="" coords="5,133,151,174"/>
+<area shape="rect" id="node4" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1client_1_1tcp__client.html" title=" " alt="" coords="627,5,772,61"/>
+<area shape="rect" id="node5" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1client_1_1udp__client.html" title=" " alt="" coords="625,85,773,141"/>
+<area shape="rect" id="node7" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1server_1_1tcp__server.html" title=" " alt="" coords="625,165,774,221"/>
+<area shape="rect" id="node8" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1server_1_1udp__server.html" title=" " alt="" coords="623,245,776,301"/>
+</map>

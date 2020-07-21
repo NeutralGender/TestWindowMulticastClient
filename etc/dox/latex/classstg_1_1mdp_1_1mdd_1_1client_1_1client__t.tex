@@ -1,0 +1,105 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t}{}\doxysection{stg\+::mdp\+::mdd\+::client\+::client\+\_\+t Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t}\index{stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}}
+
+
+Multicast client class.  
+
+
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a515cc263d31d9d2b6338093002a07695}\label{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a515cc263d31d9d2b6338093002a07695}} 
+{\bfseries client\+\_\+t} (std\+::size\+\_\+t queue\+\_\+len, \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&rng)
+\item 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a5e493573c8c42f08e039a1703e91418b}{create\+\_\+epoll\+\_\+fd}} ()
+\begin{DoxyCompactList}\small\item\em Create an epoll fd object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$mcast\+\_\+type T$>$ }\\void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a699963c434385a03b424f81eff679272}{add\+\_\+channels\+\_\+epoll}} (\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1client_1_1dissemination_1_1dissm__receiver}{dissm\+\_\+receiver}}$<$ T $>$ \&A, \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1client_1_1dissemination_1_1dissm__receiver}{dissm\+\_\+receiver}}$<$ T $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Add one channel from A and one from B to one epoll. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a5f7aaf460c359dde8f783e08240be189}{create\+\_\+thread}} ()
+\begin{DoxyCompactList}\small\item\em Create a thread object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_ae5fe0df15c3e461b15a1028363b4963b}{wait}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1epoll_1_1epoll__t}{epoll\+\_\+t}} $>$ \&epoll, \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1client_1_1arbitrator_1_1arbitrator__t}{arbitrator\+\_\+t}} \&m\+\_\+arbitrator, \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1producer_1_1producer__t}{producer\+\_\+t}} \&m\+\_\+prod, std\+::mutex \&mtx)
+\begin{DoxyCompactList}\small\item\em Wai for an event on an epoll file descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Multicast client class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a699963c434385a03b424f81eff679272}\label{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a699963c434385a03b424f81eff679272}} 
+\index{stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}!add\_channels\_epoll@{add\_channels\_epoll}}
+\index{add\_channels\_epoll@{add\_channels\_epoll}!stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}}
+\doxysubsubsection{\texorpdfstring{add\_channels\_epoll()}{add\_channels\_epoll()}}
+{\footnotesize\ttfamily template$<$mcast\+\_\+type T$>$ \\
+void stg\+::mdp\+::mdd\+::client\+::client\+\_\+t\+::add\+\_\+channels\+\_\+epoll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1client_1_1dissemination_1_1dissm__receiver}{dissm\+\_\+receiver}}$<$ T $>$ \&}]{A,  }\item[{\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1client_1_1dissemination_1_1dissm__receiver}{dissm\+\_\+receiver}}$<$ T $>$ \&}]{B }\end{DoxyParamCaption})}
+
+
+
+Add one channel from A and one from B to one epoll. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & multicast type\+: S\+SM or A\+NY \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A feed \\
+\hline
+{\em B} & B feed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a5e493573c8c42f08e039a1703e91418b}\label{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a5e493573c8c42f08e039a1703e91418b}} 
+\index{stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}!create\_epoll\_fd@{create\_epoll\_fd}}
+\index{create\_epoll\_fd@{create\_epoll\_fd}!stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}}
+\doxysubsubsection{\texorpdfstring{create\_epoll\_fd()}{create\_epoll\_fd()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::client\+::client\+\_\+t\+::create\+\_\+epoll\+\_\+fd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create an epoll fd object. 
+
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a5f7aaf460c359dde8f783e08240be189}\label{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_a5f7aaf460c359dde8f783e08240be189}} 
+\index{stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}!create\_thread@{create\_thread}}
+\index{create\_thread@{create\_thread}!stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}}
+\doxysubsubsection{\texorpdfstring{create\_thread()}{create\_thread()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::client\+::client\+\_\+t\+::create\+\_\+thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a thread object. 
+
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_ae5fe0df15c3e461b15a1028363b4963b}\label{classstg_1_1mdp_1_1mdd_1_1client_1_1client__t_ae5fe0df15c3e461b15a1028363b4963b}} 
+\index{stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}!wait@{wait}}
+\index{wait@{wait}!stg::mdp::mdd::client::client\_t@{stg::mdp::mdd::client::client\_t}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::client\+::client\+\_\+t\+::wait (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1epoll_1_1epoll__t}{epoll\+\_\+t}} $>$ \&}]{epoll,  }\item[{\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1client_1_1arbitrator_1_1arbitrator__t}{arbitrator\+\_\+t}} \&}]{m\+\_\+arbitrator,  }\item[{\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1client_1_1producer_1_1producer__t}{producer\+\_\+t}} \&}]{m\+\_\+prod,  }\item[{std\+::mutex \&}]{mtx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Wai for an event on an epoll file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em epoll} & epoll instance \\
+\hline
+{\em m\+\_\+arbitrator} & arbitrator instance \\
+\hline
+{\em m\+\_\+prod} & writer to ring instance \\
+\hline
+{\em mtx} & mutex for synchronization \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/dissemination/client/client.\+hpp\end{DoxyCompactItemize}

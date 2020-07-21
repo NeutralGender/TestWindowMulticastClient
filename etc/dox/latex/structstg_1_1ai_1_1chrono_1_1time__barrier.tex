@@ -1,0 +1,58 @@
+\hypertarget{structstg_1_1ai_1_1chrono_1_1time__barrier}{}\doxysection{stg\+::ai\+::chrono\+::time\+\_\+barrier Struct Reference}
+\label{structstg_1_1ai_1_1chrono_1_1time__barrier}\index{stg::ai::chrono::time\_barrier@{stg::ai::chrono::time\_barrier}}
+
+
+{\ttfamily \#include $<$time\+\_\+barrier.\+hpp$>$}
+
+
+
+Collaboration diagram for stg\+::ai\+::chrono\+::time\+\_\+barrier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{structstg_1_1ai_1_1chrono_1_1time__barrier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1chrono_1_1time__barrier_aaf433a95b242678c201de97ca9059b84}\label{structstg_1_1ai_1_1chrono_1_1time__barrier_aaf433a95b242678c201de97ca9059b84}} 
+\mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1time__barrier_aaf433a95b242678c201de97ca9059b84}{time\+\_\+barrier}} (tm\+\_\+point\+::value\+\_\+type shift=0)
+\begin{DoxyCompactList}\small\item\em Constructs time barrier with given value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1time__barrier_a53708c81584906fe5664a9cc86cd0f1a}{check}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1chrono_1_1time__barrier_aba481db60d80ea2387f3b2ec506f9c54}\label{structstg_1_1ai_1_1chrono_1_1time__barrier_aba481db60d80ea2387f3b2ec506f9c54}} 
+tm\+\_\+point\+::value\+\_\+type \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1time__barrier_aba481db60d80ea2387f3b2ec506f9c54}{barrier\+\_\+sampling}}
+\begin{DoxyCompactList}\small\item\em Barrier shift expressed in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1chrono_1_1time__barrier_a6419258de4a4796c51a0919fd6361b80}\label{structstg_1_1ai_1_1chrono_1_1time__barrier_a6419258de4a4796c51a0919fd6361b80}} 
+\mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1tm__point}{tm\+\_\+point}} \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1time__barrier_a6419258de4a4796c51a0919fd6361b80}{last\+\_\+barrier}}
+\begin{DoxyCompactList}\small\item\em Last barrier time point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1chrono_1_1time__barrier_a15cbd94fee16676299f1ac322bafea63}\label{structstg_1_1ai_1_1chrono_1_1time__barrier_a15cbd94fee16676299f1ac322bafea63}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1spinlock__t}{spinlock\+\_\+t}} \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1time__barrier_a15cbd94fee16676299f1ac322bafea63}{guard\+\_\+lock}}
+\begin{DoxyCompactList}\small\item\em Lock for guard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Time -\/ based barrier for implementing minumum guaranteed delay between multi-\/threaded requests 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structstg_1_1ai_1_1chrono_1_1time__barrier_a53708c81584906fe5664a9cc86cd0f1a}\label{structstg_1_1ai_1_1chrono_1_1time__barrier_a53708c81584906fe5664a9cc86cd0f1a}} 
+\index{stg::ai::chrono::time\_barrier@{stg::ai::chrono::time\_barrier}!check@{check}}
+\index{check@{check}!stg::ai::chrono::time\_barrier@{stg::ai::chrono::time\_barrier}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool stg\+::ai\+::chrono\+::time\+\_\+barrier\+::check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks time barrier \begin{DoxyReturn}{Returns}
+True if time barrier succeeds 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/chrono/\mbox{\hyperlink{time__barrier_8hpp}{time\+\_\+barrier.\+hpp}}\end{DoxyCompactItemize}

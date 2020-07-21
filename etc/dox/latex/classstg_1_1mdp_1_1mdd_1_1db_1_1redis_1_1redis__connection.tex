@@ -1,0 +1,45 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection}{}\doxysection{stg\+::mdp\+::mdd\+::db\+::redis\+::redis\+\_\+connection Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection}\index{stg::mdp::mdd::db::redis::redis\_connection@{stg::mdp::mdd::db::redis::redis\_connection}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_a0831cc671dcbe1745552c60d58eb5f35}\label{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_a0831cc671dcbe1745552c60d58eb5f35}} 
+{\bfseries redis\+\_\+connection} (const std\+::string \&hostname\+\_\+, const std\+::size\+\_\+t port\+\_\+)
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_a1321c7d6f96760cfbe73229bc584307c}\label{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_a1321c7d6f96760cfbe73229bc584307c}} 
+\mbox{\hyperlink{structredisContext}{redis\+Context}} $\ast$ {\bfseries connection} ()
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_aba21afc55406a46691e1294b29b30634}\label{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_aba21afc55406a46691e1294b29b30634}} 
+void {\bfseries connect\+\_\+db} ()
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_abd4a49e1ae65586474e2c7dbb6fafe84}\label{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_abd4a49e1ae65586474e2c7dbb6fafe84}} 
+int {\bfseries secure\+\_\+connect} (const std\+::string \&C\+A\+\_\+crt, const std\+::string \&client\+\_\+cert, const std\+::string \&client\+\_\+private\+\_\+key, const std\+::string \&server\+\_\+to\+\_\+request)
+\end{DoxyCompactItemize}
+\doxysubsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_af185a600b0356eed151d6118359c3f4f}{redis\+\_\+commands}}
+\begin{DoxyCompactList}\small\item\em Must set A\+LL class as friend, because of predecloration Redis\+Connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_af185a600b0356eed151d6118359c3f4f}\label{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__connection_af185a600b0356eed151d6118359c3f4f}} 
+\index{stg::mdp::mdd::db::redis::redis\_connection@{stg::mdp::mdd::db::redis::redis\_connection}!redis\_commands@{redis\_commands}}
+\index{redis\_commands@{redis\_commands}!stg::mdp::mdd::db::redis::redis\_connection@{stg::mdp::mdd::db::redis::redis\_connection}}
+\doxysubsubsection{\texorpdfstring{redis\_commands}{redis\_commands}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1db_1_1redis_1_1redis__commands}{redis\+\_\+commands}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Must set A\+LL class as friend, because of predecloration Redis\+Connection. 
+
+association relation\+:
+\begin{DoxyItemize}
+\item connection not belongs to one object
+\item connection can exists without commenad object
+\item connection doesn\`{}t know about command object 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/db/redis/redis\+\_\+connection.\+hpp\end{DoxyCompactItemize}

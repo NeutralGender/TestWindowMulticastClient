@@ -1,0 +1,6 @@
+<map id="stg::ai::xring::xring_mman_t" name="stg::ai::xring::xring_mman_t">
+<area shape="rect" id="node1" title=" " alt="" coords="201,95,345,136"/>
+<area shape="rect" id="node2" href="$classstg_1_1ai_1_1noncopyable.html" title=" " alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node3" href="$classstg_1_1ai_1_1xring_1_1xring__conf.html" title=" " alt="" coords="183,5,362,32"/>
+<area shape="rect" id="node4" href="$classstg_1_1ai_1_1spinlock__t.html" title=" " alt="" coords="386,5,522,32"/>
+</map>

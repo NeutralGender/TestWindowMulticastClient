@@ -1,0 +1,77 @@
+\hypertarget{time_8hpp}{}\doxysection{include/stg/ai/chrono/time.hpp File Reference}
+\label{time_8hpp}\index{include/stg/ai/chrono/time.hpp@{include/stg/ai/chrono/time.hpp}}
+{\ttfamily \#include $<$stg/ai/ai.\+hpp$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$stg/ai/chrono/tm\+\_\+cast.\+hpp$>$}\newline
+Include dependency graph for time.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{time_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{time_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1time__point}{stg\+::ai\+::chrono\+::time\+\_\+point$<$ C\+L\+K $>$}}
+\item 
+class \mbox{\hyperlink{classstg_1_1ai_1_1chrono_1_1chrono}{stg\+::ai\+::chrono\+::chrono}}
+\item 
+class \mbox{\hyperlink{classstg_1_1ai_1_1chrono_1_1daytime__t}{stg\+::ai\+::chrono\+::daytime\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83b}{stg\+::ai\+::chrono\+::clock\+\_\+id}} \+: std\+::uint8\+\_\+t \{ \mbox{\hyperlink{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba71441c827aeeebfacd756040bd7bf014}{stg\+::ai\+::chrono\+::\+W\+A\+LL}} = C\+L\+O\+C\+K\+\_\+\+R\+E\+A\+L\+T\+I\+ME, 
+\mbox{\hyperlink{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba71290e37041f9f902be606f599a8df0b}{stg\+::ai\+::chrono\+::\+M\+O\+NO}} = C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC, 
+\mbox{\hyperlink{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba99338717c9be501b81d3a4ffbf58f592}{stg\+::ai\+::chrono\+::\+R\+AW}} = C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+I\+C\+\_\+\+R\+AW
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+TG time system
+
+Time utilities and helpers
+
+\begin{DoxyAuthor}{Author}
+Andrew Shelikhanow (\href{mailto:westtrd@txxp.org}{\texttt{ westtrd@txxp.\+org}})
+\end{DoxyAuthor}
+N\+O\+T\+I\+CE\+: All information contained herein is, and remains the property of mentioned above and its suppliers, if any.
+
+The intellectual and technical concepts contained herein are proprietary to mentioned above and its suppliers and may be covered by U.\+S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+
+Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from proprietors. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83b}\label{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83b}} 
+\index{time.hpp@{time.hpp}!clock\_id@{clock\_id}}
+\index{clock\_id@{clock\_id}!time.hpp@{time.hpp}}
+\doxysubsubsection{\texorpdfstring{clock\_id}{clock\_id}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83b}{stg\+::ai\+::chrono\+::clock\+\_\+id}} \+: std\+::uint8\+\_\+t}
+
+Clock I\+Ds
+
+Clock identifier, primary use case as a time point template parameter \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WALL@{WALL}!time.hpp@{time.hpp}}\index{time.hpp@{time.hpp}!WALL@{WALL}}}\mbox{\Hypertarget{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba71441c827aeeebfacd756040bd7bf014}\label{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba71441c827aeeebfacd756040bd7bf014}} 
+W\+A\+LL&Wall realtime clock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONO@{MONO}!time.hpp@{time.hpp}}\index{time.hpp@{time.hpp}!MONO@{MONO}}}\mbox{\Hypertarget{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba71290e37041f9f902be606f599a8df0b}\label{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba71290e37041f9f902be606f599a8df0b}} 
+M\+O\+NO&Monotonic clock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAW@{RAW}!time.hpp@{time.hpp}}\index{time.hpp@{time.hpp}!RAW@{RAW}}}\mbox{\Hypertarget{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba99338717c9be501b81d3a4ffbf58f592}\label{time_8hpp_a6f8ef8fbb7140ccdceca91e749fcf83ba99338717c9be501b81d3a4ffbf58f592}} 
+R\+AW&Raw monotonic clock. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,65 @@
+\hypertarget{date_8hpp}{}\doxysection{include/stg/ai/chrono/date.hpp File Reference}
+\label{date_8hpp}\index{include/stg/ai/chrono/date.hpp@{include/stg/ai/chrono/date.hpp}}
+{\ttfamily \#include $<$stg/ai/ai.\+hpp$>$}\newline
+{\ttfamily \#include $<$stg/ai/types.\+hpp$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$json/json.\+hpp$>$}\newline
+{\ttfamily \#include $<$stg/ai/chrono/tm\+\_\+cast.\+hpp$>$}\newline
+Include dependency graph for date.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{date_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classstg_1_1ai_1_1chrono_1_1weekday__t}{stg\+::ai\+::chrono\+::weekday\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Weekday wrapper. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1date__type}{stg\+::ai\+::chrono\+::date\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{structstg_1_1ai_1_1chrono_1_1date__range__type}{stg\+::ai\+::chrono\+::date\+\_\+range\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{date_8hpp_a27a6a8ea3ecc94bb0f231b5add9ea006}\label{date_8hpp_a27a6a8ea3ecc94bb0f231b5add9ea006}} 
+enum \mbox{\hyperlink{date_8hpp_a27a6a8ea3ecc94bb0f231b5add9ea006}{stg\+::ai\+::chrono\+::weekday}} \+: uint \{ \newline
+{\bfseries S\+U\+N\+D\+AY} = 7, 
+{\bfseries M\+O\+N\+D\+AY} = 1, 
+{\bfseries T\+U\+E\+S\+D\+AY}, 
+{\bfseries W\+E\+D\+N\+E\+S\+D\+AY}, 
+\newline
+{\bfseries T\+H\+U\+R\+S\+D\+AY}, 
+{\bfseries F\+R\+I\+D\+AY}, 
+{\bfseries S\+A\+T\+U\+R\+D\+AY}, 
+{\bfseries C\+NT} = S\+U\+N\+D\+AY
+ \}
+\begin{DoxyCompactList}\small\item\em Weekday literals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{date_8hpp_a78a7a5eda7079d41586b0ed666affff7}\label{date_8hpp_a78a7a5eda7079d41586b0ed666affff7}} 
+std\+::ostream \& {\bfseries stg\+::ai\+::chrono\+::operator$<$$<$} (std\+::ostream \&stream, date\+\_\+type const \&date)
+\item 
+\mbox{\Hypertarget{date_8hpp_aebc927c11a9000602a841d549b636de0}\label{date_8hpp_aebc927c11a9000602a841d549b636de0}} 
+std\+::ostream \& {\bfseries stg\+::ai\+::chrono\+::operator$<$$<$} (std\+::ostream \&stream, date\+\_\+range\+\_\+type const \&range)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Date utilites
+
+\begin{DoxyAuthor}{Author}
+Andrew Shelikhanow (\href{mailto:westtrd@txxp.org}{\texttt{ westtrd@txxp.\+org}}) 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+S\+TG
+\end{DoxyCopyright}
+N\+O\+T\+I\+CE\+: All information contained herein is, and remains the property of mentioned above and its suppliers, if any.
+
+The intellectual and technical concepts contained herein are proprietary to mentioned above and its suppliers and may be covered by U.\+S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+
+Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from proprietors. 

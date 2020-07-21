@@ -1,0 +1,78 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t}{}\doxysection{stg\+::mdp\+::mdd\+::dissemination\+::server\+::server\+\_\+t Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t}\index{stg::mdp::mdd::dissemination::server::server\_t@{stg::mdp::mdd::dissemination::server::server\_t}}
+
+
+Server instance.  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_ae9ac00c230949ed15df4c5d6fbfcdc0c}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_ae9ac00c230949ed15df4c5d6fbfcdc0c}} 
+{\bfseries server\+\_\+t} (const std\+::vector$<$ \mbox{\hyperlink{structstg_1_1mdp_1_1mdd_1_1conf_1_1dissemination_1_1broadcast__t}{broadcast\+\_\+t}} $>$ \&bconf)
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a518933505b953ec447d2fb7d5a890c83}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a518933505b953ec447d2fb7d5a890c83}} 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a518933505b953ec447d2fb7d5a890c83}{init\+\_\+sender}} ()
+\begin{DoxyCompactList}\small\item\em Initialize multicast channels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_ab9bf9cbfd3666188c5ea15f97d00394e}{create\+\_\+consm\+\_\+thread}} (consm\+\_\+func\+\_\+t th\+\_\+func, \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&rng, \mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&sem)
+\begin{DoxyCompactList}\small\item\em Create a consm thread object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a567f3c8d7b3ce2394cefd0065e8e3e9f}{create\+\_\+prod\+\_\+thread}} (prod\+\_\+func\+\_\+t th\+\_\+func, \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&rng, \mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&sem)
+\begin{DoxyCompactList}\small\item\em Create a prod thread object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a038c94263923c55f1dc54025053672e1}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a038c94263923c55f1dc54025053672e1}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries test\+\_\+create\+\_\+prod\+\_\+thread} (\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&rng, \mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&sem, \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1reader__t}{reader\+\_\+t}}$<$ T $>$ \&reader)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server instance. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_ab9bf9cbfd3666188c5ea15f97d00394e}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_ab9bf9cbfd3666188c5ea15f97d00394e}} 
+\index{stg::mdp::mdd::dissemination::server::server\_t@{stg::mdp::mdd::dissemination::server::server\_t}!create\_consm\_thread@{create\_consm\_thread}}
+\index{create\_consm\_thread@{create\_consm\_thread}!stg::mdp::mdd::dissemination::server::server\_t@{stg::mdp::mdd::dissemination::server::server\_t}}
+\doxysubsubsection{\texorpdfstring{create\_consm\_thread()}{create\_consm\_thread()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::dissemination\+::server\+::server\+\_\+t\+::create\+\_\+consm\+\_\+thread (\begin{DoxyParamCaption}\item[{consm\+\_\+func\+\_\+t}]{th\+\_\+func,  }\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&}]{rng,  }\item[{\mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&}]{sem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a consm thread object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+func} & pointer to execution function \\
+\hline
+{\em rng} & X\+R\+I\+NG instance \\
+\hline
+{\em sem} & wait handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a567f3c8d7b3ce2394cefd0065e8e3e9f}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1server_1_1server__t_a567f3c8d7b3ce2394cefd0065e8e3e9f}} 
+\index{stg::mdp::mdd::dissemination::server::server\_t@{stg::mdp::mdd::dissemination::server::server\_t}!create\_prod\_thread@{create\_prod\_thread}}
+\index{create\_prod\_thread@{create\_prod\_thread}!stg::mdp::mdd::dissemination::server::server\_t@{stg::mdp::mdd::dissemination::server::server\_t}}
+\doxysubsubsection{\texorpdfstring{create\_prod\_thread()}{create\_prod\_thread()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::dissemination\+::server\+::server\+\_\+t\+::create\+\_\+prod\+\_\+thread (\begin{DoxyParamCaption}\item[{prod\+\_\+func\+\_\+t}]{th\+\_\+func,  }\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__t}{xring\+\_\+t}}$<$$>$ \&}]{rng,  }\item[{\mbox{\hyperlink{classstg_1_1ai_1_1ai__wait__t}{stg\+::ai\+::ai\+\_\+wait\+\_\+t}} \&}]{sem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a prod thread object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+func} & pointer to execution function \\
+\hline
+{\em rng} & X\+R\+I\+NG instance \\
+\hline
+{\em sem} & wait handle \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/dissemination/server/server.\+hpp\end{DoxyCompactItemize}

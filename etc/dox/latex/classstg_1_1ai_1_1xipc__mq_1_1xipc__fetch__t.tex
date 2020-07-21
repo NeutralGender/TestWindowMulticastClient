@@ -1,0 +1,105 @@
+\hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t}{}\doxysection{stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+fetch\+\_\+t Class Reference}
+\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t}\index{stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}}
+
+
+X\+I\+PC MQ fetcher.  
+
+
+
+
+{\ttfamily \#include $<$fetch.\+hpp$>$}
+
+
+
+Inheritance diagram for stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+fetch\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+fetch\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a09fb7b64f9a61ce929006df22f1614b3}{$\sim$xipc\+\_\+fetch\+\_\+t}} ()=default
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::tuple$<$ const T const  $\ast$, \mbox{\hyperlink{ai_2xipc__mq_2types_8hpp_ab58f05240c491ba59820d9e23e901c92}{xipc\+\_\+err}} $>$ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a12f885431660f526a074ba01fd8255e5}{pop}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a15ef7dbadbe8e9658cb63cbf680d3e26}{xipc\+\_\+fetch\+\_\+t}} (\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t}{xipc\+\_\+mman\+\_\+core\+\_\+t}} const \&\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_aa6f485617ed40496567a4b5626f5da00}{mem}}, constexpr std\+::string \&\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_ab223b2451332e5892946dbe3f7f68fe5}{tag}}=\char`\"{}XC\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_aa6f485617ed40496567a4b5626f5da00}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_aa6f485617ed40496567a4b5626f5da00}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t}{xipc\+\_\+mman\+\_\+core\+\_\+t}} const  \& \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_aa6f485617ed40496567a4b5626f5da00}{mem}}
+\begin{DoxyCompactList}\small\item\em Ring instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_ab223b2451332e5892946dbe3f7f68fe5}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_ab223b2451332e5892946dbe3f7f68fe5}} 
+constexpr std\+::string \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_ab223b2451332e5892946dbe3f7f68fe5}{tag}}
+\begin{DoxyCompactList}\small\item\em Tag for cursor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a369d1999b1d7d1f357f6f2151dd24398}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a369d1999b1d7d1f357f6f2151dd24398}} 
+sequence\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a369d1999b1d7d1f357f6f2151dd24398}{last\+\_\+memsq}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Free memory cell sequence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a1319e041cabf499ce0d9319f5db2e79b}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a1319e041cabf499ce0d9319f5db2e79b}} 
+constexpr sequence\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a1319e041cabf499ce0d9319f5db2e79b}{pad}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Pad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+X\+I\+PC MQ fetcher. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a09fb7b64f9a61ce929006df22f1614b3}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a09fb7b64f9a61ce929006df22f1614b3}} 
+\index{stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}!````~xipc\_fetch\_t@{$\sim$xipc\_fetch\_t}}
+\index{````~xipc\_fetch\_t@{$\sim$xipc\_fetch\_t}!stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}}
+\doxysubsubsection{\texorpdfstring{$\sim$xipc\_fetch\_t()}{~xipc\_fetch\_t()}}
+{\footnotesize\ttfamily stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+fetch\+\_\+t\+::$\sim$xipc\+\_\+fetch\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Destructor \mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a15ef7dbadbe8e9658cb63cbf680d3e26}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a15ef7dbadbe8e9658cb63cbf680d3e26}} 
+\index{stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}!xipc\_fetch\_t@{xipc\_fetch\_t}}
+\index{xipc\_fetch\_t@{xipc\_fetch\_t}!stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}}
+\doxysubsubsection{\texorpdfstring{xipc\_fetch\_t()}{xipc\_fetch\_t()}}
+{\footnotesize\ttfamily stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+fetch\+\_\+t\+::xipc\+\_\+fetch\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t}{xipc\+\_\+mman\+\_\+core\+\_\+t}} const \&}]{mem,  }\item[{constexpr std\+::string \&}]{tag = {\ttfamily \char`\"{}XC\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Constructs X\+I\+PC MQ cursor/fetcher 
+\begin{DoxyParams}{Parameters}
+{\em X\+I\+PC} & MQ instance\\
+\hline
+\end{DoxyParams}
+Can be called only from X\+R\+I\+NG instance 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a12f885431660f526a074ba01fd8255e5}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t_a12f885431660f526a074ba01fd8255e5}} 
+\index{stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}!pop@{pop}}
+\index{pop@{pop}!stg::ai::xipc\_mq::xipc\_fetch\_t@{stg::ai::xipc\_mq::xipc\_fetch\_t}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::tuple$<$const T const$\ast$, \mbox{\hyperlink{ai_2xipc__mq_2types_8hpp_ab58f05240c491ba59820d9e23e901c92}{xipc\+\_\+err}}$>$ stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+fetch\+\_\+t\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Acquires a next available slot from the X\+I\+PC 
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Acquired capacity in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ nullptr, xipc\+\_\+err\+::\+F\+A\+IL \} if acquire fails, otherwise pointer to user data in a slot memory 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Actually allocates minimum possible number of cache lines 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/xipc\+\_\+mq/\mbox{\hyperlink{xipc__mq_2fetch_8hpp}{fetch.\+hpp}}\end{DoxyCompactItemize}

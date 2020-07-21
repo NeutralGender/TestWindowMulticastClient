@@ -1,0 +1,65 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender}{}\doxysection{stg\+::mdp\+::mdd\+::net\+::multicast\+::mcast\+\_\+sender Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender}\index{stg::mdp::mdd::net::multicast::mcast\_sender@{stg::mdp::mdd::net::multicast::mcast\_sender}}
+
+
+Inheritance diagram for stg\+::mdp\+::mdd\+::net\+::multicast\+::mcast\+\_\+sender\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for stg\+::mdp\+::mdd\+::net\+::multicast\+::mcast\+\_\+sender\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_ab24facf876d970e0cb530e88a8b1e7f8}{mcast\+\_\+sender}} (const std\+::string \&local\+\_\+addr\+\_\+, const std\+::string \&group\+\_\+addr\+\_\+, const std\+::size\+\_\+t port\+\_\+)
+\begin{DoxyCompactList}\small\item\em Construct a new multicast send object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_a5b56fc4a7037aa8e72889acbec38f060}\label{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_a5b56fc4a7037aa8e72889acbec38f060}} 
+{\bfseries mcast\+\_\+sender} (const std\+::string \&src, const \mbox{\hyperlink{structstg_1_1mdp_1_1mdd_1_1conf_1_1dissemination_1_1production}{production}} \&channel)
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_aaa413bd2adbd3258098844a95d0f798d}\label{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_aaa413bd2adbd3258098844a95d0f798d}} 
+virtual void {\bfseries init\+\_\+socket} () override
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_aa700f2b3f1bd8e15ef2421b0d6da0b62}\label{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_aa700f2b3f1bd8e15ef2421b0d6da0b62}} 
+virtual void {\bfseries socket\+\_\+settings} () override
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_a688c8fd4c2c620d83f9ec18ab0130f7f}\label{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_a688c8fd4c2c620d83f9ec18ab0130f7f}} 
+int {\bfseries send} (const std\+::string \&send\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_ab24facf876d970e0cb530e88a8b1e7f8}\label{classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__sender_ab24facf876d970e0cb530e88a8b1e7f8}} 
+\index{stg::mdp::mdd::net::multicast::mcast\_sender@{stg::mdp::mdd::net::multicast::mcast\_sender}!mcast\_sender@{mcast\_sender}}
+\index{mcast\_sender@{mcast\_sender}!stg::mdp::mdd::net::multicast::mcast\_sender@{stg::mdp::mdd::net::multicast::mcast\_sender}}
+\doxysubsubsection{\texorpdfstring{mcast\_sender()}{mcast\_sender()}}
+{\footnotesize\ttfamily stg\+::mdp\+::mdd\+::net\+::multicast\+::mcast\+\_\+sender\+::mcast\+\_\+sender (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{local\+\_\+addr\+\_\+,  }\item[{const std\+::string \&}]{group\+\_\+addr\+\_\+,  }\item[{const std\+::size\+\_\+t}]{port\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new multicast send object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em local\+\_\+addr\+\_\+} & local I\+Pv4 address which will send \\
+\hline
+{\em group\+\_\+addr\+\_\+} & multicast group I\+Pv4 address \\
+\hline
+{\em port\+\_\+} & sender port \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/net/multicast/send.\+hpp\end{DoxyCompactItemize}

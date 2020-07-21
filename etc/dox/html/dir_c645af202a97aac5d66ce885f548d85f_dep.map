@@ -1,0 +1,9 @@
+<map id="include/stg/mdp/mdd/net/unix" name="include/stg/mdp/mdd/net/unix">
+<area shape="rect" id="node2" href="dir_ad6fcc2937c270b312679aaa22df7369.html" title="client" alt="" coords="133,63,205,111"/>
+<area shape="rect" id="node4" href="dir_675f98a4916dad70e17d5b144b6abcc0.html" title="ai" alt="" coords="85,159,157,207"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000054_000015.html" title="2" alt="" coords="144,139,154,154"/>
+<area shape="rect" id="node3" href="dir_1185ccec22340f152f381e9ec9fd5927.html" title="server" alt="" coords="37,63,109,111"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000055_000015.html" title="3" alt="" coords="104,131,113,146"/>
+<area shape="rect" id="clust2" href="dir_c645af202a97aac5d66ce885f548d85f.html" alt="" coords="27,52,312,121"/>
+<area shape="rect" id="clust1" href="dir_a670e3cb071eea79b03b0bd002efe204.html" title="net" alt="" coords="16,16,323,132"/>
+</map>

@@ -1,0 +1,170 @@
+{\bfseries{B\+R\+E\+A\+K\+I\+NG C\+H\+A\+N\+G\+ES}}\+:
+
+
+\begin{DoxyItemize}
+\item Bulk and multi-\/bulk lengths less than -\/1 or greater than {\ttfamily L\+L\+O\+N\+G\+\_\+\+M\+AX} are now protocol errors. This is consistent with the R\+E\+SP specification. On 32-\/bit platforms, the upper bound is lowered to {\ttfamily S\+I\+Z\+E\+\_\+\+M\+AX}.
+\item Change {\ttfamily redis\+Reply.\+len} to {\ttfamily size\+\_\+t}, as it denotes the the size of a string
+
+User code should compare this to {\ttfamily size\+\_\+t} values as well. If it was used to compare to other values, casting might be necessary or can be removed, if casting was applied before.
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md1}{}\doxysubsection{0.\+x.\+x (unreleased)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md1}
+{\bfseries{B\+R\+E\+A\+K\+I\+NG C\+H\+A\+N\+G\+ES}}\+:
+
+
+\begin{DoxyItemize}
+\item Change {\ttfamily redis\+Reply.\+len} to {\ttfamily size\+\_\+t}, as it denotes the the size of a string
+\end{DoxyItemize}
+
+User code should compare this to {\ttfamily size\+\_\+t} values as well. If it was used to compare to other values, casting might be necessary or can be removed, if casting was applied before.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily redis\+Reply\+Object\+Functions.\+create\+Array} now takes {\ttfamily size\+\_\+t} for its length parameter.
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md2}{}\doxysubsection{0.\+14.\+0 (2018-\/09-\/25)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Make string2ll static to fix conflict with Redis (Tom Lee \mbox{[}c3188b\mbox{]})
+\item Use -\/dynamiclib instead of -\/shared for O\+SX (Ryan Schmidt \mbox{[}a65537\mbox{]})
+\item Use string2ll from Redis w/added tests (Michael Grunder \mbox{[}7bef04, 60f622\mbox{]})
+\item Makefile -\/ O\+SX compilation fixes (Ryan Schmidt \mbox{[}881fcb, 0e9af8\mbox{]})
+\item Remove redundant N\+U\+LL checks (Justin Brewer \mbox{[}54acc8, 58e6b8\mbox{]})
+\item Fix bulk and multi-\/bulk length truncation (Justin Brewer \mbox{[}109197\mbox{]})
+\item Fix S\+I\+G\+S\+E\+GV in Open\+B\+SD by checking for N\+U\+LL before calling freeaddrinfo (Justin Brewer \mbox{[}546d94\mbox{]})
+\item Several P\+O\+S\+IX compatibility fixes (Justin Brewer \mbox{[}bbeab8, 49bbaa, d1c1b6\mbox{]})
+\item Makefile -\/ Compatibility fixes (Dimitri Vorobiev \mbox{[}3238cf, 12a9d1\mbox{]})
+\item Makefile -\/ Fix make install on Free\+B\+SD (Zach Shipko \mbox{[}a2ef2b\mbox{]})
+\item Makefile -\/ don\textquotesingle{}t assume  is cp (Igor Gnatenko \mbox{[}725a96\mbox{]})
+\item Separate side-\/effect causing function from assert and small cleanup (amallia \mbox{[}b46413, 3c3234\mbox{]})
+\item Don\textquotesingle{}t send negative values to {\ttfamily \+\_\+\+\_\+redis\+Async\+Command} (Frederik Deweerdt \mbox{[}706129\mbox{]})
+\item Fix leak if setsockopt fails (Frederik Deweerdt \mbox{[}e21c9c\mbox{]})
+\item Fix libevent leak (zfz \mbox{[}515228\mbox{]})
+\item Clean up G\+CC warning (Ichito Nagata \mbox{[}2ec774\mbox{]})
+\item Keep track of errno in {\ttfamily \+\_\+\+\_\+redis\+Set\+Error\+From\+Errno()} as snprintf may use it (Jin Qing \mbox{[}25cd88\mbox{]})
+\item Solaris compilation fix (Donald Whyte \mbox{[}41b07d\mbox{]})
+\item Reorder linker arguments when building examples (Tustfarm-\/heart \mbox{[}06eedd\mbox{]})
+\item Keep track of subscriptions in case of rapid subscribe/unsubscribe (Hyungjin Kim \mbox{[}073dc8, be76c5, d46999\mbox{]})
+\item libuv use after free fix (Paul Scott \mbox{[}cbb956\mbox{]})
+\item Properly close socket fd on reconnect attempt (W\+SL \mbox{[}64d1ec\mbox{]})
+\item Skip valgrind in O\+SX tests (Jan-\/\+Erik Rediger \mbox{[}9deb78\mbox{]})
+\item Various updates for Travis testing O\+SX (Ted Nyman \mbox{[}fa3774, 16a459, bc0ea5\mbox{]})
+\item Update libevent (Chris Xin \mbox{[}386802\mbox{]})
+\item Change \mbox{\hyperlink{sds_8h_source}{sds.\+h}} for building in C++ projects (Ali Volkan A\+T\+LI \mbox{[}f5b32e\mbox{]})
+\item Use proper format specifier in redis\+Format\+Sds\+Command\+Argv (Paulino Huerta, Jan-\/\+Erik Rediger \mbox{[}360a06, 8655a6\mbox{]})
+\item Better handling of N\+U\+LL reply in example code (Jan-\/\+Erik Rediger \mbox{[}1b8ed3\mbox{]})
+\item Prevent overflow when formatting an error (Jan-\/\+Erik Rediger \mbox{[}0335cb\mbox{]})
+\item Compatibility fix for strerror\+\_\+r (Tom Lee \mbox{[}bb1747\mbox{]})
+\item Properly detect integer parse/overflow errors (Justin Brewer \mbox{[}93421f\mbox{]})
+\item Adds CI for Windows and cygwin fixes (owent, \mbox{[}6c53d6, 6c3e40\mbox{]})
+\item Catch a buffer overflow when formatting the error message
+\item Import latest upstream sds. This breaks applications that are linked against the old hiredis v0.\+13
+\item Fix warnings, when compiled with -\/Wshadow
+\item Make hiredis compile in Cygwin on Windows, now C\+I-\/tested
+\item Bulk and multi-\/bulk lengths less than -\/1 or greater than {\ttfamily L\+L\+O\+N\+G\+\_\+\+M\+AX} are now protocol errors. This is consistent with the R\+E\+SP specification. On 32-\/bit platforms, the upper bound is lowered to {\ttfamily S\+I\+Z\+E\+\_\+\+M\+AX}.
+\item Remove backwards compatibility macro\textquotesingle{}s
+\end{DoxyItemize}
+
+This removes the following old function aliases, use the new name now\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Old }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ New  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Old }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ New  }\\\cline{1-2}
+\endhead
+redis\+Reply\+Reader\+Create &redis\+Reader\+Create  \\\cline{1-2}
+redis\+Reply\+Reader\+Create &redis\+Reader\+Create  \\\cline{1-2}
+redis\+Reply\+Reader\+Free &redis\+Reader\+Free  \\\cline{1-2}
+redis\+Reply\+Reader\+Feed &redis\+Reader\+Feed  \\\cline{1-2}
+redis\+Reply\+Reader\+Get\+Reply &redis\+Reader\+Get\+Reply  \\\cline{1-2}
+redis\+Reply\+Reader\+Set\+Privdata &redis\+Reader\+Set\+Privdata  \\\cline{1-2}
+redis\+Reply\+Reader\+Get\+Object &redis\+Reader\+Get\+Object  \\\cline{1-2}
+redis\+Reply\+Reader\+Get\+Error &redis\+Reader\+Get\+Error  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item The {\ttfamily D\+E\+B\+UG} variable in the Makefile was renamed to {\ttfamily D\+E\+B\+U\+G\+\_\+\+F\+L\+A\+GS}
+\end{DoxyItemize}
+
+Previously it broke some builds for people that had {\ttfamily D\+E\+B\+UG} set to some arbitrary value, due to debugging other software. By renaming we avoid unintentional name clashes.
+
+Simply rename {\ttfamily D\+E\+B\+UG} to {\ttfamily D\+E\+B\+U\+G\+\_\+\+F\+L\+A\+GS} in your environment to make it working again.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md3}{}\doxysubsection{0.\+13.\+3 (2015-\/09-\/16)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Revert \char`\"{}\+Clear \`{}\+R\+E\+D\+I\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D\`{} flag when connection is closed\char`\"{}.
+\item Make tests pass on Free\+B\+SD (Thanks, Giacomo Olgeni)
+\end{DoxyItemize}
+
+If the {\ttfamily R\+E\+D\+I\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED} flag is cleared, the async on\+Disconnect callback function will never be called. This causes problems as the disconnect is never reported back to the user.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md4}{}\doxysubsection{0.\+13.\+2 (2015-\/08-\/25)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Prevent crash on pending replies in async code (Thanks, @switch-\/st)
+\item Clear {\ttfamily R\+E\+D\+I\+S\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED} flag when connection is closed (Thanks, Jerry Jacobs)
+\item Add Mac\+OS X addapter (Thanks, @dizzus)
+\item Add Qt adapter (Thanks, Pietro Cerutti)
+\item Add Ivykis adapter (Thanks, Gergely Nagy)
+\end{DoxyItemize}
+
+All adapters are provided as is and are only tested where possible.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md5}{}\doxysubsection{0.\+13.\+1 (2015-\/05-\/03)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md5}
+This is a bug fix release. The new {\ttfamily reconnect} method introduced new struct members, which clashed with pre-\/defined names in pre-\/\+C99 code. Another commit forced C99 compilation just to make it work, but of course this is not desirable for outside projects. Other non-\/\+C99 code can now use hiredis as usual again. Sorry for the inconvenience.
+
+
+\begin{DoxyItemize}
+\item Fix memory leak in async reply handling (Salvatore Sanfilippo)
+\item Rename struct member to avoid name clash with pre-\/c99 code (Alex Balashov, ncopa)
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md6}{}\doxysubsection{0.\+13.\+0 (2015-\/04-\/16)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md6}
+This release adds a minimal Windows compatibility layer. The parser, standalone since v0.\+12.\+0, can now be compiled on Windows (and thus used in other client libraries as well)
+
+
+\begin{DoxyItemize}
+\item Windows compatibility layer for parser code (tzickel)
+\item Properly escape data printed to P\+K\+G\+C\+O\+NF file (Dan Skorupski)
+\item Fix tests when assert() undefined (Keith Bennett, Matt Stancliff)
+\item Implement a reconnect method for the client context, this changes the structure of {\ttfamily \mbox{\hyperlink{structredisContext}{redis\+Context}}} (Aaron Bedra)
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md7}{}\doxysubsection{0.\+12.\+1 (2015-\/01-\/26)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Fix {\ttfamily make install}\+: D\+E\+S\+T\+D\+IR support, install all required files, install P\+K\+G\+C\+O\+NF in proper location
+\item Fix {\ttfamily make test} as 32 bit build on 64 bit platform
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md8}{}\doxysubsection{0.\+12.\+0 (2015-\/01-\/22)}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md8}
+
+\begin{DoxyItemize}
+\item Add optional Keep\+Alive support
+\item Try again on E\+I\+N\+TR errors
+\item Add libuv adapter
+\item Add I\+Pv6 support
+\item Remove possibility of multiple close on same fd
+\item Add ability to bind source address on connect
+\item Add redis\+Connect\+Fd() and redis\+Free\+Keep\+Fd()
+\item Fix getaddrinfo() memory leak
+\item Free string if it is unused (fixes memory leak)
+\item Improve redis\+Append\+Command\+Argv performance 2.\+5x
+\item Add support for S\+O\+\_\+\+R\+E\+U\+S\+E\+A\+D\+DR
+\item Fix redisv\+Format\+Command format parsing
+\item Add G\+Lib 2.\+0 adapter
+\item Refactor reading code into read.\+c
+\item Fix errno error buffers to not clobber errors
+\item Generate pkgconf during build
+\item Silence \+\_\+\+B\+S\+D\+\_\+\+S\+O\+U\+R\+CE warnings
+\item Improve digit counting for multibulk creation
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md9}{}\doxysubsection{0.\+11.\+0}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md9}
+
+\begin{DoxyItemize}
+\item Increase the maximum multi-\/bulk reply depth to 7.
+\item Increase the read buffer size from 2k to 16k.
+\item Use poll(2) instead of select(2) to support large fds ($>$= 1024).
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md10}{}\doxysubsection{0.\+10.\+1}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Makefile overhaul. Important to check out if you override one or more variables using environment variables or via arguments to the \char`\"{}make\char`\"{} tool.
+\item Issue \#45\+: Fix potential memory leak for a multi bulk reply with 0 elements being created by the default reply object functions.
+\item Issue \#43\+: Don\textquotesingle{}t crash in an asynchronous context when Redis returns an error reply after the connection has been made (this happens when the maximum number of connections is reached).
+\end{DoxyItemize}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md11}{}\doxysubsection{0.\+10.\+0}\label{md__root_Desktop_Work_dev_8other_hiredis_CHANGELOG_autotoc_md11}
+
+\begin{DoxyItemize}
+\item See commit log. 
+\end{DoxyItemize}

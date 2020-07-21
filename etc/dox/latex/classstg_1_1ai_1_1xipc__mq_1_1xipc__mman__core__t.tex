@@ -1,0 +1,142 @@
+\hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t}{}\doxysection{stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t Class Reference}
+\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t}\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+
+
+Inheritance diagram for stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xslot__t}{xslot\+\_\+t}} $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a3de48e00e20eb7a2a96258bb081ae9f3}{operator\mbox{[}$\,$\mbox{]}}} (sequence\+\_\+type const \&acq\+\_\+mem\+\_\+seq) const
+\item 
+bool \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a184462703091bc2a2831d161a7d5cab7}{empty}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_abd946fb04ab9fe01c88f1a208631b8bf}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_abd946fb04ab9fe01c88f1a208631b8bf}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__conf}{xipc\+\_\+conf}} const  \& \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_abd946fb04ab9fe01c88f1a208631b8bf}{conf}}
+\begin{DoxyCompactList}\small\item\em Copy of X\+R\+I\+NG config. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a2cdf01df4509206c94ec81bb1b76ec77}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a2cdf01df4509206c94ec81bb1b76ec77}} 
+const capacity\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a2cdf01df4509206c94ec81bb1b76ec77}{capacity}}
+\begin{DoxyCompactList}\small\item\em Capacity (number of chunks) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a0813e8aedde0f80c48f259d20c364b07}{xipc\+\_\+mman\+\_\+core\+\_\+t}} (\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__conf}{xipc\+\_\+conf}} const \&cfg)
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_af5e789d16816acbad29f2b79d44c24f5}{$\sim$xipc\+\_\+mman\+\_\+core\+\_\+t}} ()
+\item 
+void \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a8adb531525b251250a5f4f3a6112026a}{clear}} ()
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a82bbe1ad429cd53f368860d759d1a8d6}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a82bbe1ad429cd53f368860d759d1a8d6}} 
+memsize\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a82bbe1ad429cd53f368860d759d1a8d6}{memblk\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Helper calculates memory block size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a1edfe227cb1b23d091b7c3684723835c}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a1edfe227cb1b23d091b7c3684723835c}} 
+std\+::atomic$<$ sequence\+\_\+type $>$ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a1edfe227cb1b23d091b7c3684723835c}{msq}} \{ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_ac0096f4d19f04fdfb7961090fefca448}{null\+\_\+seq}} \}
+\begin{DoxyCompactList}\small\item\em Memory sequence (can be with holes, used for indexed access) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a7f26740b1d1263a7051d35c3f03b7e2d}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a7f26740b1d1263a7051d35c3f03b7e2d}} 
+std\+::atomic$<$ sequence\+\_\+type $>$ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a7f26740b1d1263a7051d35c3f03b7e2d}{msq\+\_\+hdr}} \{ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_ac0096f4d19f04fdfb7961090fefca448}{null\+\_\+seq}} \}
+\begin{DoxyCompactList}\small\item\em Header commit sequence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a5bc52817e6dfe0384548411dcf7f8068}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a5bc52817e6dfe0384548411dcf7f8068}} 
+u\+\_\+char $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a5bc52817e6dfe0384548411dcf7f8068}{memblk}} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em Points to the begin of page payload storage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a55b55b085d7d5338defdfb0555389fb8}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a55b55b085d7d5338defdfb0555389fb8}} 
+char \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a55b55b085d7d5338defdfb0555389fb8}{pad}} \mbox{[}cacheline\+\_\+sz\mbox{]} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Padded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+constexpr static auto \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_ac0096f4d19f04fdfb7961090fefca448}{null\+\_\+seq}} \{ S\+I\+Z\+E\+\_\+\+M\+AX \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_af5bca3ff008e0a053b6f8a94ee6a68c3}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_af5bca3ff008e0a053b6f8a94ee6a68c3}} 
+{\footnotesize template$<$typename T $>$ }\\class {\bfseries xipc\+\_\+t}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a0813e8aedde0f80c48f259d20c364b07}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a0813e8aedde0f80c48f259d20c364b07}} 
+\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}!xipc\_mman\_core\_t@{xipc\_mman\_core\_t}}
+\index{xipc\_mman\_core\_t@{xipc\_mman\_core\_t}!stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+\doxysubsubsection{\texorpdfstring{xipc\_mman\_core\_t()}{xipc\_mman\_core\_t()}}
+{\footnotesize\ttfamily stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+::xipc\+\_\+mman\+\_\+core\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xipc__conf}{xipc\+\_\+conf}} const \&}]{cfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Constructs X\+I\+PC MQ memory 
+\begin{DoxyParams}{Parameters}
+{\em X\+I\+PC} & MQ configuration instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_af5e789d16816acbad29f2b79d44c24f5}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_af5e789d16816acbad29f2b79d44c24f5}} 
+\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}!````~xipc\_mman\_core\_t@{$\sim$xipc\_mman\_core\_t}}
+\index{````~xipc\_mman\_core\_t@{$\sim$xipc\_mman\_core\_t}!stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+\doxysubsubsection{\texorpdfstring{$\sim$xipc\_mman\_core\_t()}{~xipc\_mman\_core\_t()}}
+{\footnotesize\ttfamily stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+::$\sim$xipc\+\_\+mman\+\_\+core\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Destroys page and deallocates its memory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a8adb531525b251250a5f4f3a6112026a}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a8adb531525b251250a5f4f3a6112026a}} 
+\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}!clear@{clear}}
+\index{clear@{clear}!stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Cleans ring, pointers reset to initial position \mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a184462703091bc2a2831d161a7d5cab7}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a184462703091bc2a2831d161a7d5cab7}} 
+\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}!empty@{empty}}
+\index{empty@{empty}!stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether memory block is empty \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a3de48e00e20eb7a2a96258bb081ae9f3}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_a3de48e00e20eb7a2a96258bb081ae9f3}} 
+\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstg_1_1ai_1_1xipc__mq_1_1xslot__t}{xslot\+\_\+t}}$\ast$ stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{sequence\+\_\+type const \&}]{acq\+\_\+mem\+\_\+seq }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Accesses slot through memory sequence 
+\begin{DoxyParams}{Parameters}
+{\em acq\+\_\+mem\+\_\+seq} & Acquired memory sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+X\+S\+L\+OT pointer, nullptr if no new data or incorrect sequence 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_ac0096f4d19f04fdfb7961090fefca448}\label{classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__core__t_ac0096f4d19f04fdfb7961090fefca448}} 
+\index{stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}!null\_seq@{null\_seq}}
+\index{null\_seq@{null\_seq}!stg::ai::xipc\_mq::xipc\_mman\_core\_t@{stg::ai::xipc\_mq::xipc\_mman\_core\_t}}
+\doxysubsubsection{\texorpdfstring{null\_seq}{null\_seq}}
+{\footnotesize\ttfamily constexpr static auto stg\+::ai\+::xipc\+\_\+mq\+::xipc\+\_\+mman\+\_\+core\+\_\+t\+::null\+\_\+seq \{ S\+I\+Z\+E\+\_\+\+M\+AX \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+N\+U\+LL sequence value
+
+We need to avoid branch prediction and want to describe \textquotesingle{}empty\textquotesingle{} storage. When container is empty, all sequences equals to null sequences. But initial placement is free from branches, because S\+I\+Z\+E\+\_\+\+M\+AX + 1 = 0, i.\+e. index in the chunks virtual array 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/xipc\+\_\+mq/\mbox{\hyperlink{xipc__mq_2mman_8hpp}{mman.\+hpp}}\end{DoxyCompactItemize}

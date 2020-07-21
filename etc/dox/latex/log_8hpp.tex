@@ -1,0 +1,323 @@
+\hypertarget{log_8hpp}{}\doxysection{include/stg/ai/log.hpp File Reference}
+\label{log_8hpp}\index{include/stg/ai/log.hpp@{include/stg/ai/log.hpp}}
+{\ttfamily \#include $<$stg/ai/ai.\+hpp$>$}\newline
+{\ttfamily \#include $<$sys/syscall.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$cstdarg$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$stg/ai/filesystem.\+hpp$>$}\newline
+Include dependency graph for log.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{log_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{log_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlog__t}{log\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8hpp_a349c7b8d734ce56bc4de7819fa6948e8}\label{log_8hpp_a349c7b8d734ce56bc4de7819fa6948e8}} 
+\#define {\bfseries C\+O\+N\+\_\+\+R\+ED}(s)~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{} s \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{log_8hpp_a973c7d16683442473d97fd89c27f385e}\label{log_8hpp_a973c7d16683442473d97fd89c27f385e}} 
+\#define {\bfseries C\+O\+N\+\_\+\+G\+R\+E\+EN}(s)~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{} s \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{log_8hpp_a9590c16b228b7f4b56b37c3f39b3ba85}\label{log_8hpp_a9590c16b228b7f4b56b37c3f39b3ba85}} 
+\#define {\bfseries C\+O\+N\+\_\+\+Y\+E\+L\+L\+OW}(s)~\char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{} s \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{log_8hpp_a6c798241abf2b2e9754008fc4102eee9}\label{log_8hpp_a6c798241abf2b2e9754008fc4102eee9}} 
+\#define \mbox{\hyperlink{log_8hpp_a6c798241abf2b2e9754008fc4102eee9}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+E\+R\+R\+OR}}~0
+\begin{DoxyCompactList}\small\item\em Error events logging -\/ always logged. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a738529122a97e65262e60ef762b3b66c}\label{log_8hpp_a738529122a97e65262e60ef762b3b66c}} 
+\#define \mbox{\hyperlink{log_8hpp_a738529122a97e65262e60ef762b3b66c}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+W\+A\+RN}}~1
+\begin{DoxyCompactList}\small\item\em Warning events logging -- can be suppressed but doesn\textquotesingle{}t recommended. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_aa143ef29fdb8cbcf69e2930c6a443541}\label{log_8hpp_aa143ef29fdb8cbcf69e2930c6a443541}} 
+\#define \mbox{\hyperlink{log_8hpp_aa143ef29fdb8cbcf69e2930c6a443541}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+NF}}~2
+\begin{DoxyCompactList}\small\item\em Informational events logging level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a3097e04caa44ccb78a8f7ad7fd8161d2}\label{log_8hpp_a3097e04caa44ccb78a8f7ad7fd8161d2}} 
+\#define \mbox{\hyperlink{log_8hpp_a3097e04caa44ccb78a8f7ad7fd8161d2}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+A\+U\+D\+IT}}~3
+\begin{DoxyCompactList}\small\item\em Audit events logging level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a96e6970eadb0dd79f41a3ae100ce28d5}\label{log_8hpp_a96e6970eadb0dd79f41a3ae100ce28d5}} 
+\#define \mbox{\hyperlink{log_8hpp_a96e6970eadb0dd79f41a3ae100ce28d5}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+T\+R\+A\+CE}}~4
+\begin{DoxyCompactList}\small\item\em Trace events logging level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_ad19a9ddb7f9dbedd7bb04cb227d65fa3}\label{log_8hpp_ad19a9ddb7f9dbedd7bb04cb227d65fa3}} 
+\#define \mbox{\hyperlink{log_8hpp_ad19a9ddb7f9dbedd7bb04cb227d65fa3}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+D\+E\+B\+UG}}~5
+\begin{DoxyCompactList}\small\item\em Debug events logging level. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{log_8hpp_adee5bbfb328f21996f891ee82e8b954f}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}~\mbox{\hyperlink{log_8hpp_a3097e04caa44ccb78a8f7ad7fd8161d2}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+A\+U\+D\+IT}}
+\item 
+\mbox{\Hypertarget{log_8hpp_a245e36f418d6ccfb4d876393916e6f4c}\label{log_8hpp_a245e36f418d6ccfb4d876393916e6f4c}} 
+\#define {\bfseries L\+O\+G\+\_\+\+F\+L\+U\+SH}~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$flush()
+\item 
+\#define \mbox{\hyperlink{log_8hpp_a388edf12256bf73c3a8ee9734c3bd841}{L\+OG}}(fmt, ...)
+\begin{DoxyCompactList}\small\item\em System log -\/ always logged. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a4fc242f6ca762832ae1ac44e514ca6a1}\label{log_8hpp_a4fc242f6ca762832ae1ac44e514ca6a1}} 
+\#define {\bfseries L\+O\+GQ}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$logx(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$sys\+\_\+, \char`\"{}\char`\"{}, \char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_ab212f62e89c405559b6b85db65935e5e}{L\+O\+G\+\_\+\+P\+A\+N\+IC}}(fmt, ...)
+\begin{DoxyCompactList}\small\item\em P\+A\+N\+IC log -\/ impossible to disable logging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_aa363a96900ac86ef66ee9de2b7737219}\label{log_8hpp_aa363a96900ac86ef66ee9de2b7737219}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+P\+A\+N\+IC}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$logx(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$sys\+\_\+, \char`\"{}P\+A\+N\+IC\char`\"{}, \char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_a4e29be383f695d81955a861020a733e0}{L\+O\+G\+\_\+\+E\+RR}}(fmt, ...)
+\begin{DoxyCompactList}\small\item\em Error log level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a1751fb6542edb4f494c6797f6dfabf6f}\label{log_8hpp_a1751fb6542edb4f494c6797f6dfabf6f}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+E\+RR}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$logx(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$sys\+\_\+, \char`\"{}E\+RR\char`\"{}, \char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_adba1363ea408060eab75cb5a48dcb907}{L\+O\+G\+\_\+\+W\+A\+RN}}(fmt, ...)
+\begin{DoxyCompactList}\small\item\em Warning log level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_ad538c64948db92476caf4e578d4591de}\label{log_8hpp_ad538c64948db92476caf4e578d4591de}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+W\+A\+RN}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$logx(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$sys\+\_\+, \char`\"{}W\+A\+RN\char`\"{}, \char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_adf9abf2dedfe1bf87b59a295cb172e8c}{L\+O\+G\+\_\+\+I\+NF}}(fmt, ...)
+\begin{DoxyCompactList}\small\item\em Info log level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_af7986732842c53878477868f783a97e7}\label{log_8hpp_af7986732842c53878477868f783a97e7}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+I\+NF}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$logx(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$sys\+\_\+, \char`\"{}I\+NF\char`\"{}, \char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_a1e7da2e6a1640b178ab8729512560adc}{L\+O\+G\+\_\+\+A\+U\+D\+IT}}(fmt, ...)
+\begin{DoxyCompactList}\small\item\em Audit log level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a700a53177baa88693311cc066b8e8e9f}\label{log_8hpp_a700a53177baa88693311cc066b8e8e9f}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+A\+U\+D\+IT}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$logx(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$audit\+\_\+, \char`\"{}A\+U\+D\+IT\char`\"{}, \char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\mbox{\Hypertarget{log_8hpp_a58c994180e09d2f6400133b19b1d7036}\label{log_8hpp_a58c994180e09d2f6400133b19b1d7036}} 
+\#define \mbox{\hyperlink{log_8hpp_a58c994180e09d2f6400133b19b1d7036}{L\+O\+G\+\_\+\+T\+R\+A\+CE}}(...)
+\begin{DoxyCompactList}\small\item\em Trace log level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8hpp_a8b353fc7fdc2cdefed50ac7a171e4672}\label{log_8hpp_a8b353fc7fdc2cdefed50ac7a171e4672}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+T\+R\+A\+CE}(...)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_afb97e6291db24665313453d192941330}{L\+O\+G\+\_\+\+D\+BG}}(...)
+\item 
+\mbox{\Hypertarget{log_8hpp_a6fdafc9c6668fdd20de555c94cfea22f}\label{log_8hpp_a6fdafc9c6668fdd20de555c94cfea22f}} 
+\#define {\bfseries L\+O\+G\+\_\+\+D\+B\+G\+\_\+\+F\+L\+U\+SH}
+\item 
+\mbox{\Hypertarget{log_8hpp_ad3223c70dab90b573e1d4d0fe583dd80}\label{log_8hpp_ad3223c70dab90b573e1d4d0fe583dd80}} 
+\#define {\bfseries L\+O\+G\+\_\+\+A\+S\+S\+E\+RT}(expr,  fmt, ...)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_acc9e6aeced1288be70dd05adbd441532}{L\+O\+G\+\_\+\+W\+A\+R\+N\+\_\+\+IF}}(expr,  fmt, ...)
+\item 
+\#define \mbox{\hyperlink{log_8hpp_a040c1f1e99e4056fdc87f64fe309af74}{L\+O\+G\+\_\+\+C\+ON}}(fmt, ...)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$to\+\_\+stderr(\char`\"{}\%s\char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{log_8hpp_a15fb4bde6a3d4b884d8c5fc45852e110}\label{log_8hpp_a15fb4bde6a3d4b884d8c5fc45852e110}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+C\+ON}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$to\+\_\+stderr(\char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\mbox{\Hypertarget{log_8hpp_a08ec64988ba9138b02e09ae9e5b91f2f}\label{log_8hpp_a08ec64988ba9138b02e09ae9e5b91f2f}} 
+\#define {\bfseries L\+O\+G\+\_\+\+C\+O\+N\+\_\+\+F\+O\+R\+CE}(fmt, ...)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$to\+\_\+stderr(\char`\"{}\%s\char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{log_8hpp_aa8a3dc0320dad091a37b33acee44455e}\label{log_8hpp_aa8a3dc0320dad091a37b33acee44455e}} 
+\#define {\bfseries L\+O\+G\+Q\+\_\+\+C\+O\+N\+\_\+\+F\+O\+R\+CE}(s)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$to\+\_\+stderr(\char`\"{}\%s\%s\textbackslash{}n\char`\"{}, s)
+\item 
+\mbox{\Hypertarget{log_8hpp_a7ce0df38eb467e59f209470c8f5ac4e6}\label{log_8hpp_a7ce0df38eb467e59f209470c8f5ac4e6}} 
+\#define {\bfseries L\+O\+G\+\_\+\+T\+AG}~\char`\"{}\mbox{[}axl.\+ai.\+log\mbox{]} \char`\"{}
+\item 
+\#define \mbox{\hyperlink{log_8hpp_abe318f70a3eb1a5368c440f10dbf6194}{L\+O\+G\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+TE}}(path,  key)
+\item 
+\mbox{\Hypertarget{log_8hpp_a3f902267c5f78463c7c4e0fe361003f5}\label{log_8hpp_a3f902267c5f78463c7c4e0fe361003f5}} 
+\#define {\bfseries L\+O\+G\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+S\+FX}(path,  key,  sfx,  append)~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$init(std\+::make\+\_\+tuple(path, key, sfx, append));
+\item 
+\#define {\bfseries Q\+W\+O\+R\+D2\+L\+I\+ST}(x)
+\item 
+\mbox{\Hypertarget{log_8hpp_ad847d872714558faeb45daf34c00f7ac}\label{log_8hpp_ad847d872714558faeb45daf34c00f7ac}} 
+\#define {\bfseries \+\_\+\+\_\+\+H\+E\+X\+D\+U\+M\+P\+\_\+\+N\+O\+N\+P\+R\+I\+N\+T\+\_\+\+\_\+}~\textquotesingle{}.\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logger infrastructure
+
+\begin{DoxyAuthor}{Author}
+Andrew Shelikhanow (\href{mailto:westtrd@txxp.org}{\texttt{ westtrd@txxp.\+org}}) 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+S\+TG
+\end{DoxyCopyright}
+N\+O\+T\+I\+CE\+: All information contained herein is, and remains the property of mentioned above and its suppliers, if any.
+
+The intellectual and technical concepts contained herein are proprietary to mentioned above and its suppliers and may be covered by U.\+S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+
+Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from proprietors. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{log_8hpp_a388edf12256bf73c3a8ee9734c3bd841}\label{log_8hpp_a388edf12256bf73c3a8ee9734c3bd841}} 
+\index{log.hpp@{log.hpp}!LOG@{LOG}}
+\index{LOG@{LOG}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG}{LOG}}
+{\footnotesize\ttfamily \#define L\+OG(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                 \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_aead265bdac85a70e9c51925df1ad79cf}{logx}}(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>sys\_,  \(\backslash\)}
+\DoxyCodeLine{                                                 \textcolor{stringliteral}{""},                           \(\backslash\)}
+\DoxyCodeLine{                                                 \textcolor{stringliteral}{"\%s"} fmt \textcolor{stringliteral}{"\(\backslash\)n"},                \(\backslash\)}
+\DoxyCodeLine{                                                 \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+System log -\/ always logged. 
+
+\mbox{\Hypertarget{log_8hpp_a1e7da2e6a1640b178ab8729512560adc}\label{log_8hpp_a1e7da2e6a1640b178ab8729512560adc}} 
+\index{log.hpp@{log.hpp}!LOG\_AUDIT@{LOG\_AUDIT}}
+\index{LOG\_AUDIT@{LOG\_AUDIT}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_AUDIT}{LOG\_AUDIT}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+A\+U\+D\+IT(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                       \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_aead265bdac85a70e9c51925df1ad79cf}{logx}}(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>audit\_,    \(\backslash\)}
+\DoxyCodeLine{                                                       \textcolor{stringliteral}{"AUDIT"},                         \(\backslash\)}
+\DoxyCodeLine{                                                        \textcolor{stringliteral}{"\%s"} fmt \textcolor{stringliteral}{"\(\backslash\)n"},                  \(\backslash\)}
+\DoxyCodeLine{                                                        \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Audit log level. 
+
+\mbox{\Hypertarget{log_8hpp_a040c1f1e99e4056fdc87f64fe309af74}\label{log_8hpp_a040c1f1e99e4056fdc87f64fe309af74}} 
+\index{log.hpp@{log.hpp}!LOG\_CON@{LOG\_CON}}
+\index{LOG\_CON@{LOG\_CON}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_CON}{LOG\_CON}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+C\+ON(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\+\_\+t\+::instance}}()-\/$>$to\+\_\+stderr(\char`\"{}\%s\char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}
+
+Log message into stderr, default\+: disabled \mbox{\Hypertarget{log_8hpp_afb97e6291db24665313453d192941330}\label{log_8hpp_afb97e6291db24665313453d192941330}} 
+\index{log.hpp@{log.hpp}!LOG\_DBG@{LOG\_DBG}}
+\index{LOG\_DBG@{LOG\_DBG}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_DBG}{LOG\_DBG}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+D\+BG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+Debug log level \mbox{\Hypertarget{log_8hpp_a4e29be383f695d81955a861020a733e0}\label{log_8hpp_a4e29be383f695d81955a861020a733e0}} 
+\index{log.hpp@{log.hpp}!LOG\_ERR@{LOG\_ERR}}
+\index{LOG\_ERR@{LOG\_ERR}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_ERR}{LOG\_ERR}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+E\+RR(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                   \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_aead265bdac85a70e9c51925df1ad79cf}{logx}}(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>sys\_,        \(\backslash\)}
+\DoxyCodeLine{                                                   \textcolor{stringliteral}{"ERR"},                             \(\backslash\)}
+\DoxyCodeLine{                                                   \textcolor{stringliteral}{"\%s"} fmt \textcolor{stringliteral}{"\(\backslash\)n"},                     \(\backslash\)}
+\DoxyCodeLine{                                                   \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Error log level. 
+
+\mbox{\Hypertarget{log_8hpp_adf9abf2dedfe1bf87b59a295cb172e8c}\label{log_8hpp_adf9abf2dedfe1bf87b59a295cb172e8c}} 
+\index{log.hpp@{log.hpp}!LOG\_INF@{LOG\_INF}}
+\index{LOG\_INF@{LOG\_INF}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_INF}{LOG\_INF}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+I\+NF(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                     \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_aead265bdac85a70e9c51925df1ad79cf}{logx}}(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>sys\_,        \(\backslash\)}
+\DoxyCodeLine{                                                     \textcolor{stringliteral}{"INFO"},                            \(\backslash\)}
+\DoxyCodeLine{                                                     \textcolor{stringliteral}{"\%s"} fmt \textcolor{stringliteral}{"\(\backslash\)n"},                     \(\backslash\)}
+\DoxyCodeLine{                                                     \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Info log level. 
+
+\mbox{\Hypertarget{log_8hpp_abe318f70a3eb1a5368c440f10dbf6194}\label{log_8hpp_abe318f70a3eb1a5368c440f10dbf6194}} 
+\index{log.hpp@{log.hpp}!LOG\_INSTANTIATE@{LOG\_INSTANTIATE}}
+\index{LOG\_INSTANTIATE@{LOG\_INSTANTIATE}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_INSTANTIATE}{LOG\_INSTANTIATE}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+I\+N\+S\+T\+A\+N\+T\+I\+A\+TE(\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_a93aed8cd28e24e3254438beda68b9e43}{init}}(std::make\_tuple(path,                \(\backslash\)}
+\DoxyCodeLine{                                                std::string(key),    \(\backslash\)}
+\DoxyCodeLine{                                                \mbox{\hyperlink{classlog__t_afd3bbda5399460852bef74bb8876ea4d}{log\_t::suffix}}(),  \(\backslash\)}
+\DoxyCodeLine{                                                \textcolor{keyword}{false}));}
+
+\end{DoxyCode}
+Instantiates log with default suffix \mbox{\Hypertarget{log_8hpp_ab212f62e89c405559b6b85db65935e5e}\label{log_8hpp_ab212f62e89c405559b6b85db65935e5e}} 
+\index{log.hpp@{log.hpp}!LOG\_PANIC@{LOG\_PANIC}}
+\index{LOG\_PANIC@{LOG\_PANIC}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_PANIC}{LOG\_PANIC}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+P\+A\+N\+IC(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                     \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_aead265bdac85a70e9c51925df1ad79cf}{logx}}(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>syslog\_,   \(\backslash\)}
+\DoxyCodeLine{                                                     \textcolor{stringliteral}{"PANIC"},                         \(\backslash\)}
+\DoxyCodeLine{                                                     \textcolor{stringliteral}{"\%s"} fmt \textcolor{stringliteral}{"\(\backslash\)n"},                   \(\backslash\)}
+\DoxyCodeLine{                                                     \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+P\+A\+N\+IC log -\/ impossible to disable logging. 
+
+\mbox{\Hypertarget{log_8hpp_adba1363ea408060eab75cb5a48dcb907}\label{log_8hpp_adba1363ea408060eab75cb5a48dcb907}} 
+\index{log.hpp@{log.hpp}!LOG\_WARN@{LOG\_WARN}}
+\index{LOG\_WARN@{LOG\_WARN}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_WARN}{LOG\_WARN}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+W\+A\+RN(\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                      \mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>\mbox{\hyperlink{classlog__t_aead265bdac85a70e9c51925df1ad79cf}{logx}}(\mbox{\hyperlink{classlog__t_a4e3da8941f9756f192dac899911dcf7d}{log\_t::instance}}()-\/>sys\_,       \(\backslash\)}
+\DoxyCodeLine{                                                      \textcolor{stringliteral}{"WARN"},                           \(\backslash\)}
+\DoxyCodeLine{                                                      \textcolor{stringliteral}{"\%s"} fmt \textcolor{stringliteral}{"\(\backslash\)n"},                    \(\backslash\)}
+\DoxyCodeLine{                                                      \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Warning log level. 
+
+\mbox{\Hypertarget{log_8hpp_acc9e6aeced1288be70dd05adbd441532}\label{log_8hpp_acc9e6aeced1288be70dd05adbd441532}} 
+\index{log.hpp@{log.hpp}!LOG\_WARN\_IF@{LOG\_WARN\_IF}}
+\index{LOG\_WARN\_IF@{LOG\_WARN\_IF}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_WARN\_IF}{LOG\_WARN\_IF}}
+{\footnotesize\ttfamily \#define L\+O\+G\+\_\+\+W\+A\+R\+N\+\_\+\+IF(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                               \(\backslash\)}
+\DoxyCodeLine{        if (expr)                                   \(\backslash\)}
+\DoxyCodeLine{            LOG\_WARN(fmt, \_\_VA\_ARGS\_\_);             \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+Conditional warning logging \mbox{\Hypertarget{log_8hpp_a037e96f2e1cc74b24add220755e79ba4}\label{log_8hpp_a037e96f2e1cc74b24add220755e79ba4}} 
+\index{log.hpp@{log.hpp}!QWORD2LIST@{QWORD2LIST}}
+\index{QWORD2LIST@{QWORD2LIST}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{QWORD2LIST}{QWORD2LIST}}
+{\footnotesize\ttfamily \#define Q\+W\+O\+R\+D2\+L\+I\+ST(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                           x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], \(\backslash\)}
+\DoxyCodeLine{                           x[8], x[9], x[10], x[11], x[12], x[13], x[14], x[15]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{log_8hpp_adee5bbfb328f21996f891ee82e8b954f}\label{log_8hpp_adee5bbfb328f21996f891ee82e8b954f}} 
+\index{log.hpp@{log.hpp}!STG\_LOG\_LEVEL@{STG\_LOG\_LEVEL}}
+\index{STG\_LOG\_LEVEL@{STG\_LOG\_LEVEL}!log.hpp@{log.hpp}}
+\doxysubsubsection{\texorpdfstring{STG\_LOG\_LEVEL}{STG\_LOG\_LEVEL}}
+{\footnotesize\ttfamily \#define S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL~\mbox{\hyperlink{log_8hpp_a3097e04caa44ccb78a8f7ad7fd8161d2}{S\+T\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+A\+U\+D\+IT}}}
+
+If build system isn\textquotesingle{}t defines logging level, it will be T\+X\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+E\+L\+\_\+\+D\+E\+B\+UG by default 

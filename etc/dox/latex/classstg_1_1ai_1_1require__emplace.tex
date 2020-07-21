@@ -1,0 +1,69 @@
+\hypertarget{classstg_1_1ai_1_1require__emplace}{}\doxysection{stg\+::ai\+::require\+\_\+emplace Class Reference}
+\label{classstg_1_1ai_1_1require__emplace}\index{stg::ai::require\_emplace@{stg::ai::require\_emplace}}
+
+
+{\ttfamily \#include $<$common.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1require__emplace_a2863d5bd2ec2dd1a6174c3edf60ad9ad}{operator new}} (std\+::size\+\_\+t, void $\ast$p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1require__emplace_a20b6eaae15a66e835e5fb7bb554c472d}\label{classstg_1_1ai_1_1require__emplace_a20b6eaae15a66e835e5fb7bb554c472d}} 
+constexpr \mbox{\hyperlink{classstg_1_1ai_1_1require__emplace_a20b6eaae15a66e835e5fb7bb554c472d}{require\+\_\+emplace}} ()=default
+\begin{DoxyCompactList}\small\item\em Uses default constructor. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1require__emplace_af2ca6d2bd8e559507574567156b80fa2}{operator new}} (std\+::size\+\_\+t)
+\item 
+void $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1require__emplace_a642beaff1a2672f57daac5757f8b5a9d}{operator new\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper for disabling non-\/placement construction for single instance and for arrays
+
+Usage\+: class someclass\+: public \mbox{\hyperlink{classstg_1_1ai_1_1require__emplace}{require\+\_\+emplace}} ... 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1require__emplace_af2ca6d2bd8e559507574567156b80fa2}\label{classstg_1_1ai_1_1require__emplace_af2ca6d2bd8e559507574567156b80fa2}} 
+\index{stg::ai::require\_emplace@{stg::ai::require\_emplace}!operator new@{operator new}}
+\index{operator new@{operator new}!stg::ai::require\_emplace@{stg::ai::require\_emplace}}
+\doxysubsubsection{\texorpdfstring{operator new()}{operator new()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void$\ast$ stg\+::ai\+::require\+\_\+emplace\+::operator new (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prevents standard \textquotesingle{}new\textquotesingle{} operator 
+\begin{DoxyParams}{Parameters}
+{\em Number} & of bytes to allocate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1ai_1_1require__emplace_a2863d5bd2ec2dd1a6174c3edf60ad9ad}\label{classstg_1_1ai_1_1require__emplace_a2863d5bd2ec2dd1a6174c3edf60ad9ad}} 
+\index{stg::ai::require\_emplace@{stg::ai::require\_emplace}!operator new@{operator new}}
+\index{operator new@{operator new}!stg::ai::require\_emplace@{stg::ai::require\_emplace}}
+\doxysubsubsection{\texorpdfstring{operator new()}{operator new()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void$\ast$ stg\+::ai\+::require\+\_\+emplace\+::operator new (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{,  }\item[{void $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Placement new implementation 
+\begin{DoxyParams}{Parameters}
+{\em Acquired} & size (unused) \\
+\hline
+{\em p} & Placement address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstg_1_1ai_1_1require__emplace_a642beaff1a2672f57daac5757f8b5a9d}\label{classstg_1_1ai_1_1require__emplace_a642beaff1a2672f57daac5757f8b5a9d}} 
+\index{stg::ai::require\_emplace@{stg::ai::require\_emplace}!operator new\mbox{[}\mbox{]}@{operator new[]}}
+\index{operator new\mbox{[}\mbox{]}@{operator new[]}!stg::ai::require\_emplace@{stg::ai::require\_emplace}}
+\doxysubsubsection{\texorpdfstring{operator new[]()}{operator new[]()}}
+{\footnotesize\ttfamily void$\ast$ stg\+::ai\+::require\+\_\+emplace\+::operator new\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prevents standard \textquotesingle{}new\textquotesingle{} operator for arrays 
+\begin{DoxyParams}{Parameters}
+{\em Number} & of bytes to allocate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/\mbox{\hyperlink{common_8hpp}{common.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader}{}\doxysection{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::pcap\+\_\+reader Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader}\index{stg::mdp::mdd::dissemination::reader::pcap\_reader@{stg::mdp::mdd::dissemination::reader::pcap\_reader}}
+
+
+Low-\/level module for pcap files reading.  
+
+
+
+
+{\ttfamily \#include $<$pcap\+\_\+reader.\+hpp$>$}
+
+
+
+Inheritance diagram for stg\+::mdp\+::mdd\+::dissemination\+::reader\+::pcap\+\_\+reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for stg\+::mdp\+::mdd\+::dissemination\+::reader\+::pcap\+\_\+reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_ae54575e1f884d749ca81877c2b37b592}{open}} (const std\+::string \&open\+\_\+name) override
+\begin{DoxyCompactList}\small\item\em Open pcap file for reading. \end{DoxyCompactList}\item 
+virtual std\+::tuple$<$ u\+\_\+int32\+\_\+t, char $\ast$ $>$ \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_ab64b9a16ab9ccf4cd90718c4bd2fdbf4}{read}} () override
+\begin{DoxyCompactList}\small\item\em Reading pcap file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_a7a821bbc7f7d5116b062ddd28a48c10f}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_a7a821bbc7f7d5116b062ddd28a48c10f}} 
+virtual addr\+\_\+data \& \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_a7a821bbc7f7d5116b062ddd28a48c10f}{get\+\_\+data}} () override
+\begin{DoxyCompactList}\small\item\em Get the data object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Low-\/level module for pcap files reading. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_ae54575e1f884d749ca81877c2b37b592}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_ae54575e1f884d749ca81877c2b37b592}} 
+\index{stg::mdp::mdd::dissemination::reader::pcap\_reader@{stg::mdp::mdd::dissemination::reader::pcap\_reader}!open@{open}}
+\index{open@{open}!stg::mdp::mdd::dissemination::reader::pcap\_reader@{stg::mdp::mdd::dissemination::reader::pcap\_reader}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::dissemination\+::reader\+::pcap\+\_\+reader\+::open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{open\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open pcap file for reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flename} & pcap filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1read__api_a2746e94f46f8c13950496b57aff754b6}{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::read\+\_\+api}}.
+
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_ab64b9a16ab9ccf4cd90718c4bd2fdbf4}\label{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader_ab64b9a16ab9ccf4cd90718c4bd2fdbf4}} 
+\index{stg::mdp::mdd::dissemination::reader::pcap\_reader@{stg::mdp::mdd::dissemination::reader::pcap\_reader}!read@{read}}
+\index{read@{read}!stg::mdp::mdd::dissemination::reader::pcap\_reader@{stg::mdp::mdd::dissemination::reader::pcap\_reader}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily std\+::tuple$<$ u\+\_\+int32\+\_\+t, char $\ast$ $>$ stg\+::mdp\+::mdd\+::dissemination\+::reader\+::pcap\+\_\+reader\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reading pcap file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container for $<$address\+:data$>$ from file \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1read__api_a4c939ffac5db65d640622a79069bd183}{stg\+::mdp\+::mdd\+::dissemination\+::reader\+::read\+\_\+api}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/dissemination/reader/pcap\+\_\+reader.\+hpp\end{DoxyCompactItemize}

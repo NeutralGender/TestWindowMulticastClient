@@ -1,0 +1,50 @@
+\hypertarget{structstg_1_1ai_1_1path__t}{}\doxysection{stg\+::ai\+::path\+\_\+t Struct Reference}
+\label{structstg_1_1ai_1_1path__t}\index{stg::ai::path\_t@{stg::ai::path\_t}}
+
+
+{\ttfamily \#include $<$filesystem.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1path__t_a2e53b2a9c59c61ef138ad832956ce505}\label{structstg_1_1ai_1_1path__t_a2e53b2a9c59c61ef138ad832956ce505}} 
+\mbox{\hyperlink{structstg_1_1ai_1_1path__t_a2e53b2a9c59c61ef138ad832956ce505}{path\+\_\+t}} (path\+\_\+type const \&\mbox{\hyperlink{structstg_1_1ai_1_1path__t_a8a5b0cdd859768569ac9dbba207174a7}{path}})
+\begin{DoxyCompactList}\small\item\em Constructs using given path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1path__t_aaa7dd9508567a54de4023a1b75925efa}\label{structstg_1_1ai_1_1path__t_aaa7dd9508567a54de4023a1b75925efa}} 
+bool \mbox{\hyperlink{structstg_1_1ai_1_1path__t_aaa7dd9508567a54de4023a1b75925efa}{exists}} () const
+\begin{DoxyCompactList}\small\item\em Checks existence of given path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstg_1_1ai_1_1path__t_a8a5b0cdd859768569ac9dbba207174a7}\label{structstg_1_1ai_1_1path__t_a8a5b0cdd859768569ac9dbba207174a7}} 
+path\+\_\+type const  \& \mbox{\hyperlink{structstg_1_1ai_1_1path__t_a8a5b0cdd859768569ac9dbba207174a7}{path}} () const
+\begin{DoxyCompactList}\small\item\em Provides path content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static filelist\+\_\+type \mbox{\hyperlink{structstg_1_1ai_1_1path__t_a6400b6fd68c64984e8ca2b658bc50da2}{ls\+\_\+wildcard}} (path\+\_\+type const \&target, wildcard\+\_\+type const \&expr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Path functionality wrapper 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structstg_1_1ai_1_1path__t_a6400b6fd68c64984e8ca2b658bc50da2}\label{structstg_1_1ai_1_1path__t_a6400b6fd68c64984e8ca2b658bc50da2}} 
+\index{stg::ai::path\_t@{stg::ai::path\_t}!ls\_wildcard@{ls\_wildcard}}
+\index{ls\_wildcard@{ls\_wildcard}!stg::ai::path\_t@{stg::ai::path\_t}}
+\doxysubsubsection{\texorpdfstring{ls\_wildcard()}{ls\_wildcard()}}
+{\footnotesize\ttfamily static filelist\+\_\+type stg\+::ai\+::path\+\_\+t\+::ls\+\_\+wildcard (\begin{DoxyParamCaption}\item[{path\+\_\+type const \&}]{target,  }\item[{wildcard\+\_\+type const \&}]{expr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Matches files in target directory by wildcard using regex 
+\begin{DoxyParams}{Parameters}
+{\em target} & Target directory for files lookup \\
+\hline
+{\em expr} & Wildcard regex expression \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matched files names 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/filesystem.\+hpp\end{DoxyCompactItemize}

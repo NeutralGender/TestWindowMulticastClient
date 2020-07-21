@@ -1,0 +1,169 @@
+\hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t}{}\doxysection{stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t Class Reference}
+\label{classstg_1_1ai_1_1xring_1_1xring__mman__t}\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+
+
+Inheritance diagram for stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classstg_1_1ai_1_1xring_1_1xring__mman__t__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classstg_1_1ai_1_1xring_1_1xring__mman__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a5a31706edbb598e85f1606e15dcea1de}{xring\+\_\+mman\+\_\+t}} (\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__conf}{xring\+\_\+conf}} const \&cfg)
+\item 
+\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t}{xslot\+\_\+t}} $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_aab41961de2fa7aa246928bfeb54e66f0}{operator\mbox{[}$\,$\mbox{]}}} (sequence\+\_\+type const \&acq\+\_\+mem\+\_\+seq) const
+\item 
+bool \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a218093e01869833e0203d68824df0592}{empty}} () const
+\item 
+void \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_afd64259e0e40c7003013710fc7f88f19}{clear}} ()
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_abd5674f9ad30b51704003445ce2c6b8c}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_abd5674f9ad30b51704003445ce2c6b8c}} 
+auto const  \& {\bfseries get\+\_\+memblk} ()
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a79dc06c9df86de17069fd5899d69b8d1}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a79dc06c9df86de17069fd5899d69b8d1}} 
+u\+\_\+char $\ast$ {\bfseries get\+\_\+memseq2mem} (sequence\+\_\+type const \&mem\+\_\+seq) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a6b24992d69658792a48b7779b357abc1}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a6b24992d69658792a48b7779b357abc1}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__conf}{xring\+\_\+conf}} const  \& \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a6b24992d69658792a48b7779b357abc1}{conf}}
+\begin{DoxyCompactList}\small\item\em Copy of X\+R\+I\+NG config. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2fb3bad54d3ec273992212098e2f7e9d}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2fb3bad54d3ec273992212098e2f7e9d}} 
+const capacity\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2fb3bad54d3ec273992212098e2f7e9d}{capacity}}
+\begin{DoxyCompactList}\small\item\em Capacity (number of chunks) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+constexpr static auto \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2b6420873756ed9cc59de0934de04bbf}{null\+\_\+seq}} \{ S\+I\+Z\+E\+\_\+\+M\+AX \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+mem\+\_\+ix\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_adab274e61319c54960e205c33249e88d}{memseq2ix}} (sequence\+\_\+type const \&mem\+\_\+seq) const
+\item 
+u\+\_\+char $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a4a51a02405cf4460e8ab7a52cb81cc94}{memseq2mem}} (sequence\+\_\+type const \&mem\+\_\+seq) const
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_aa1b3d443c70ae6213a3ca82e37685b78}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_aa1b3d443c70ae6213a3ca82e37685b78}} 
+memsize\+\_\+type \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_aa1b3d443c70ae6213a3ca82e37685b78}{memblk\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Helper calculates memory block size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a6bc5c81486ae30d21f18fe7fd38d0fdd}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a6bc5c81486ae30d21f18fe7fd38d0fdd}} 
+\mbox{\hyperlink{classstg_1_1ai_1_1spinlock__t}{spinlock\+\_\+t}} \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a6bc5c81486ae30d21f18fe7fd38d0fdd}{lck}}
+\begin{DoxyCompactList}\small\item\em Lock (used with lock -\/ implemented allocator) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_aadb0284db81d07345c88d9680d216e8a}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_aadb0284db81d07345c88d9680d216e8a}} 
+std\+::atomic$<$ sequence\+\_\+type $>$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_aadb0284db81d07345c88d9680d216e8a}{msq}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Memory sequence (can be with holes, used for indexed access) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_af86d415f7b599b469effc9aaa1d0517f}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_af86d415f7b599b469effc9aaa1d0517f}} 
+std\+::atomic$<$ sequence\+\_\+type $>$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_af86d415f7b599b469effc9aaa1d0517f}{msq\+\_\+hdr}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Header sequence, on finished slot allocation M\+U\+ST be same with msq. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_afcc816dc94bfb22e20177a55943dc14d}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_afcc816dc94bfb22e20177a55943dc14d}} 
+u\+\_\+char $\ast$ \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_afcc816dc94bfb22e20177a55943dc14d}{memblk}} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em Points to the begin of page payload storage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2175b5babbccb1338fb390acb987605d}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2175b5babbccb1338fb390acb987605d}} 
+char \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2175b5babbccb1338fb390acb987605d}{pad}} \mbox{[}cacheline\+\_\+sz\mbox{]} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Padded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a5a31706edbb598e85f1606e15dcea1de}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a5a31706edbb598e85f1606e15dcea1de}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!xring\_mman\_t@{xring\_mman\_t}}
+\index{xring\_mman\_t@{xring\_mman\_t}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{xring\_mman\_t()}{xring\_mman\_t()}}
+{\footnotesize\ttfamily stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::xring\+\_\+mman\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xring__conf}{xring\+\_\+conf}} const \&}]{cfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs X\+R\+I\+NG memory 
+\begin{DoxyParams}{Parameters}
+{\em X\+R\+I\+NG} & configuration instance \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_afd64259e0e40c7003013710fc7f88f19}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_afd64259e0e40c7003013710fc7f88f19}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!clear@{clear}}
+\index{clear@{clear}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cleans ring, pointers reset to initial position \mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a218093e01869833e0203d68824df0592}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a218093e01869833e0203d68824df0592}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!empty@{empty}}
+\index{empty@{empty}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether memory block is empty \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_adab274e61319c54960e205c33249e88d}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_adab274e61319c54960e205c33249e88d}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!memseq2ix@{memseq2ix}}
+\index{memseq2ix@{memseq2ix}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{memseq2ix()}{memseq2ix()}}
+{\footnotesize\ttfamily mem\+\_\+ix\+\_\+type stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::memseq2ix (\begin{DoxyParamCaption}\item[{sequence\+\_\+type const \&}]{mem\+\_\+seq }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Provides virtual index of cachelines array in the flat memory for given memory sequence 
+\begin{DoxyParams}{Parameters}
+{\em mem\+\_\+seq} & Memory sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Virtual index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a4a51a02405cf4460e8ab7a52cb81cc94}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a4a51a02405cf4460e8ab7a52cb81cc94}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!memseq2mem@{memseq2mem}}
+\index{memseq2mem@{memseq2mem}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{memseq2mem()}{memseq2mem()}}
+{\footnotesize\ttfamily u\+\_\+char$\ast$ stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::memseq2mem (\begin{DoxyParamCaption}\item[{sequence\+\_\+type const \&}]{mem\+\_\+seq }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Provides memory address for given memory sequence 
+\begin{DoxyParams}{Parameters}
+{\em mem\+\_\+seq} & Memory sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address inside storage\textquotesingle{}s memory block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_aab41961de2fa7aa246928bfeb54e66f0}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_aab41961de2fa7aa246928bfeb54e66f0}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstg_1_1ai_1_1xring_1_1xslot__t}{xslot\+\_\+t}}$\ast$ stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{sequence\+\_\+type const \&}]{acq\+\_\+mem\+\_\+seq }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Accesses slot through memory sequence 
+\begin{DoxyParams}{Parameters}
+{\em acq\+\_\+mem\+\_\+seq} & Acquired memory sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+X\+S\+L\+OT pointer, nullptr if no new data or incorrect sequence 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2b6420873756ed9cc59de0934de04bbf}\label{classstg_1_1ai_1_1xring_1_1xring__mman__t_a2b6420873756ed9cc59de0934de04bbf}} 
+\index{stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}!null\_seq@{null\_seq}}
+\index{null\_seq@{null\_seq}!stg::ai::xring::xring\_mman\_t@{stg::ai::xring::xring\_mman\_t}}
+\doxysubsubsection{\texorpdfstring{null\_seq}{null\_seq}}
+{\footnotesize\ttfamily constexpr static auto stg\+::ai\+::xring\+::xring\+\_\+mman\+\_\+t\+::null\+\_\+seq \{ S\+I\+Z\+E\+\_\+\+M\+AX \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+N\+U\+LL sequence value
+
+We need to avoid branch prediction and want to describe \textquotesingle{}empty\textquotesingle{} storage When container is empty, all sequences equals to null sequences. But initial placement is free from branches, because S\+I\+Z\+E\+\_\+\+M\+AX + 1 = 0, i.\+e. index in the chunks virtual array 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/ai/xring/mman.\+hpp\end{DoxyCompactItemize}

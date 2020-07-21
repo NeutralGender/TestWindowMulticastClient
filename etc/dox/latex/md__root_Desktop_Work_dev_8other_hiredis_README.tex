@@ -1,0 +1,312 @@
+\href{https://travis-ci.org/redis/hiredis}{\texttt{ }}
+
+{\bfseries{This Readme reflects the latest changed in the master branch. See \href{https://github.com/redis/hiredis/tree/v0.13.3}{\texttt{ v0.\+13.\+3}} for the Readme and documentation for the latest release (\href{https://abi-laboratory.pro/?view=timeline&l=hiredis}{\texttt{ A\+P\+I/\+A\+BI history}}).}}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md12}{}\doxysection{H\+I\+R\+E\+D\+IS}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md12}
+Hiredis is a minimalistic C client library for the \href{http://redis.io/}{\texttt{ Redis}} database.
+
+It is minimalistic because it just adds minimal support for the protocol, but at the same time it uses a high level printf-\/alike A\+PI in order to make it much higher level than otherwise suggested by its minimal code base and the lack of explicit bindings for every Redis command.
+
+Apart from supporting sending commands and receiving replies, it comes with a reply parser that is decoupled from the I/O layer. It is a stream parser designed for easy reusability, which can for instance be used in higher level language bindings for efficient reply parsing.
+
+Hiredis only supports the binary-\/safe Redis protocol, so you can use it with any Redis version $>$= 1.\+2.\+0.
+
+The library comes with multiple A\+P\+Is. There is the {\itshape synchronous A\+PI}, the {\itshape asynchronous A\+PI} and the {\itshape reply parsing A\+PI}.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md13}{}\doxysubsection{Upgrading to $<$tt$>$1.\+0.\+0$<$/tt$>$}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md13}
+Version 1.\+0.\+0 marks a stable release of hiredis. It includes some minor breaking changes, mostly to make the exposed A\+PI more uniform and self-\/explanatory. It also bundles the updated {\ttfamily sds} library, to sync up with upstream and Redis. For most applications a recompile against the new hiredis should be enough. For code changes see the Changelog.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md14}{}\doxysubsection{Upgrading from $<$tt$>$$<$0.\+9.\+0$<$/tt$>$}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md14}
+Version 0.\+9.\+0 is a major overhaul of hiredis in every aspect. However, upgrading existing code using hiredis should not be a big pain. The key thing to keep in mind when upgrading is that hiredis $>$= 0.\+9.\+0 uses a {\ttfamily redis\+Context$\ast$} to keep state, in contrast to the stateless 0.\+0.\+1 that only has a file descriptor to work with.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md15}{}\doxysubsection{Synchronous A\+PI}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md15}
+To consume the synchronous A\+PI, there are only a few function calls that need to be introduced\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structredisContext}{redisContext}} *redisConnect(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *ip, \textcolor{keywordtype}{int} port);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} *redisCommand(\mbox{\hyperlink{structredisContext}{redisContext}} *c, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, ...);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} freeReplyObject(\textcolor{keywordtype}{void} *reply);}
+\end{DoxyCode}
+\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md16}{}\doxysubsubsection{Connecting}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md16}
+The function {\ttfamily redis\+Connect} is used to create a so-\/called {\ttfamily \mbox{\hyperlink{structredisContext}{redis\+Context}}}. The context is where Hiredis holds state for a connection. The {\ttfamily \mbox{\hyperlink{structredisContext}{redis\+Context}}} struct has an integer {\ttfamily err} field that is non-\/zero when the connection is in an error state. The field {\ttfamily errstr} will contain a string with a description of the error. More information on errors can be found in the {\bfseries{Errors}} section. After trying to connect to Redis using {\ttfamily redis\+Connect} you should check the {\ttfamily err} field to see if establishing the connection was successful\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structredisContext}{redisContext}} *c = redisConnect(\textcolor{stringliteral}{"127.0.0.1"}, 6379);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (c == NULL || c-\/>err) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (c) \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"Error: \%s\(\backslash\)n"}, c-\/>errstr);}
+\DoxyCodeLine{        \textcolor{comment}{// handle error}}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"Can't allocate redis context\(\backslash\)n"});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+{\itshape Note\+: A {\ttfamily \mbox{\hyperlink{structredisContext}{redis\+Context}}} is not thread-\/safe.}\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md17}{}\doxysubsubsection{Sending commands}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md17}
+There are several ways to issue commands to Redis. The first that will be introduced is {\ttfamily redis\+Command}. This function takes a format similar to printf. In the simplest form, it is used like this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{reply = redisCommand(context, \textcolor{stringliteral}{"SET foo bar"});}
+\end{DoxyCode}
+
+
+The specifier {\ttfamily s} interpolates a string in the command, and uses {\ttfamily strlen} to determine the length of the string\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{reply = redisCommand(context, \textcolor{stringliteral}{"SET foo \%s"}, value);}
+\end{DoxyCode}
+
+
+When you need to pass binary safe strings in a command, the {\ttfamily b} specifier can be used. Together with a pointer to the string, it requires a {\ttfamily size\+\_\+t} length argument of the string\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{reply = redisCommand(context, \textcolor{stringliteral}{"SET foo \%b"}, value, (\textcolor{keywordtype}{size\_t}) valuelen);}
+\end{DoxyCode}
+
+
+Internally, Hiredis splits the command in different arguments and will convert it to the protocol used to communicate with Redis. One or more spaces separates arguments, so you can use the specifiers anywhere in an argument\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{reply = redisCommand(context, \textcolor{stringliteral}{"SET key:\%s \%s"}, myid, value);}
+\end{DoxyCode}
+\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md18}{}\doxysubsubsection{Using replies}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md18}
+The return value of {\ttfamily redis\+Command} holds a reply when the command was successfully executed. When an error occurs, the return value is {\ttfamily N\+U\+LL} and the {\ttfamily err} field in the context will be set (see section on {\bfseries{Errors}}). Once an error is returned the context cannot be reused and you should set up a new connection.
+
+The standard replies that {\ttfamily redis\+Command} are of the type {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}}. The {\ttfamily type} field in the {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}} should be used to test what kind of reply was received\+:
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+S\+T\+A\+T\+US}$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item The command replied with a status reply. The status string can be accessed using {\ttfamily reply-\/$>$str}. The length of this string can be accessed using {\ttfamily reply-\/$>$len}.
+\end{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+E\+R\+R\+OR}$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item The command replied with an error. The error string can be accessed identical to {\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+S\+T\+A\+T\+US}.
+\end{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+I\+N\+T\+E\+G\+ER}$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item The command replied with an integer. The integer value can be accessed using the {\ttfamily reply-\/$>$integer} field of type {\ttfamily long long}.
+\end{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+N\+IL}$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item The command replied with a {\bfseries{nil}} object. There is no data to access.
+\end{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+S\+T\+R\+I\+NG}$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item A bulk (string) reply. The value of the reply can be accessed using {\ttfamily reply-\/$>$str}. The length of this string can be accessed using {\ttfamily reply-\/$>$len}.
+\end{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+A\+R\+R\+AY}$\ast$$\ast$\+:
+\begin{DoxyItemize}
+\item A multi bulk reply. The number of elements in the multi bulk reply is stored in {\ttfamily reply-\/$>$elements}. Every element in the multi bulk reply is a {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}} object as well and can be accessed via {\ttfamily reply-\/$>$element\mbox{[}..index..\mbox{]}}. Redis may reply with nested arrays but this is fully supported.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Replies should be freed using the {\ttfamily free\+Reply\+Object()} function. Note that this function will take care of freeing sub-\/reply objects contained in arrays and nested arrays, so there is no need for the user to free the sub replies (it is actually harmful and will corrupt the memory).
+
+{\bfseries{Important\+:}} the current version of hiredis (0.\+10.\+0) frees replies when the asynchronous A\+PI is used. This means you should not call {\ttfamily free\+Reply\+Object} when you use this A\+PI. The reply is cleaned up by hiredis {\itshape after} the callback returns. This behavior will probably change in future releases, so make sure to keep an eye on the changelog when upgrading (see issue \#39).\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md19}{}\doxysubsubsection{Cleaning up}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md19}
+To disconnect and free the context the following function can be used\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} redisFree(\mbox{\hyperlink{structredisContext}{redisContext}} *c);}
+\end{DoxyCode}
+
+
+This function immediately closes the socket and then frees the allocations done in creating the context.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md20}{}\doxysubsubsection{Sending commands (cont\textquotesingle{}d)}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md20}
+Together with {\ttfamily redis\+Command}, the function {\ttfamily redis\+Command\+Argv} can be used to issue commands. It has the following prototype\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} *redisCommandArgv(\mbox{\hyperlink{structredisContext}{redisContext}} *c, \textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char} **argv, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} *argvlen);}
+\end{DoxyCode}
+
+
+It takes the number of arguments {\ttfamily argc}, an array of strings {\ttfamily argv} and the lengths of the arguments {\ttfamily argvlen}. For convenience, {\ttfamily argvlen} may be set to {\ttfamily N\+U\+LL} and the function will use {\ttfamily strlen(3)} on every argument to determine its length. Obviously, when any of the arguments need to be binary safe, the entire array of lengths {\ttfamily argvlen} should be provided.
+
+The return value has the same semantic as {\ttfamily redis\+Command}.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md21}{}\doxysubsubsection{Pipelining}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md21}
+To explain how Hiredis supports pipelining in a blocking connection, there needs to be understanding of the internal execution flow.
+
+When any of the functions in the {\ttfamily redis\+Command} family is called, Hiredis first formats the command according to the Redis protocol. The formatted command is then put in the output buffer of the context. This output buffer is dynamic, so it can hold any number of commands. After the command is put in the output buffer, {\ttfamily redis\+Get\+Reply} is called. This function has the following two execution paths\+:
+
+
+\begin{DoxyEnumerate}
+\item The input buffer is non-\/empty\+:
+\begin{DoxyItemize}
+\item Try to parse a single reply from the input buffer and return it
+\item If no reply could be parsed, continue at {\itshape 2}
+\end{DoxyItemize}
+\item The input buffer is empty\+:
+\begin{DoxyItemize}
+\item Write the {\bfseries{entire}} output buffer to the socket
+\item Read from the socket until a single reply could be parsed
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+The function {\ttfamily redis\+Get\+Reply} is exported as part of the Hiredis A\+PI and can be used when a reply is expected on the socket. To pipeline commands, the only things that needs to be done is filling up the output buffer. For this cause, two commands can be used that are identical to the {\ttfamily redis\+Command} family, apart from not returning a reply\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} redisAppendCommand(\mbox{\hyperlink{structredisContext}{redisContext}} *c, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, ...);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} redisAppendCommandArgv(\mbox{\hyperlink{structredisContext}{redisContext}} *c, \textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char} **argv, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} *argvlen);}
+\end{DoxyCode}
+
+
+After calling either function one or more times, {\ttfamily redis\+Get\+Reply} can be used to receive the subsequent replies. The return value for this function is either {\ttfamily R\+E\+D\+I\+S\+\_\+\+OK} or {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR}, where the latter means an error occurred while reading a reply. Just as with the other commands, the {\ttfamily err} field in the context can be used to find out what the cause of this error is.
+
+The following examples shows a simple pipeline (resulting in only a single call to {\ttfamily write(2)} and a single call to {\ttfamily read(2)})\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structredisReply}{redisReply}} *reply;}
+\DoxyCodeLine{redisAppendCommand(context,\textcolor{stringliteral}{"SET foo bar"});}
+\DoxyCodeLine{redisAppendCommand(context,\textcolor{stringliteral}{"GET foo"});}
+\DoxyCodeLine{redisGetReply(context,(\textcolor{keywordtype}{void} *)\&reply); \textcolor{comment}{// reply for SET}}
+\DoxyCodeLine{freeReplyObject(reply);}
+\DoxyCodeLine{redisGetReply(context,(\textcolor{keywordtype}{void} *)\&reply); \textcolor{comment}{// reply for GET}}
+\DoxyCodeLine{freeReplyObject(reply);}
+\end{DoxyCode}
+
+
+This A\+PI can also be used to implement a blocking subscriber\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{reply = redisCommand(context,\textcolor{stringliteral}{"SUBSCRIBE foo"});}
+\DoxyCodeLine{freeReplyObject(reply);}
+\DoxyCodeLine{\textcolor{keywordflow}{while}(redisGetReply(context,(\textcolor{keywordtype}{void} *)\&reply) == REDIS\_OK) \{}
+\DoxyCodeLine{    \textcolor{comment}{// consume message}}
+\DoxyCodeLine{    freeReplyObject(reply);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md22}{}\doxysubsubsection{Errors}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md22}
+When a function call is not successful, depending on the function either {\ttfamily N\+U\+LL} or {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR} is returned. The {\ttfamily err} field inside the context will be non-\/zero and set to one of the following constants\+:
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+R\+R\+\_\+\+IO}$\ast$$\ast$\+: There was an I/O error while creating the connection, trying to write to the socket or read from the socket. If you included {\ttfamily errno.\+h} in your application, you can use the global {\ttfamily errno} variable to find out what is wrong.
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+R\+R\+\_\+\+E\+OF}$\ast$$\ast$\+: The server closed the connection which resulted in an empty read.
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+R\+R\+\_\+\+P\+R\+O\+T\+O\+C\+OL}$\ast$$\ast$\+: There was an error while parsing the protocol.
+\item $\ast$$\ast${\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+R\+R\+\_\+\+O\+T\+H\+ER}$\ast$$\ast$\+: Any other error. Currently, it is only used when a specified hostname to connect to cannot be resolved.
+\end{DoxyItemize}
+
+In every case, the {\ttfamily errstr} field in the context will be set to hold a string representation of the error.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md23}{}\doxysubsection{Asynchronous A\+PI}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md23}
+Hiredis comes with an asynchronous A\+PI that works easily with any event library. Examples are bundled that show using Hiredis with \href{http://software.schmorp.de/pkg/libev.html}{\texttt{ libev}} and \href{http://monkey.org/~provos/libevent/}{\texttt{ libevent}}.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md24}{}\doxysubsubsection{Connecting}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md24}
+The function {\ttfamily redis\+Async\+Connect} can be used to establish a non-\/blocking connection to Redis. It returns a pointer to the newly created {\ttfamily \mbox{\hyperlink{structredisAsyncContext}{redis\+Async\+Context}}} struct. The {\ttfamily err} field should be checked after creation to see if there were errors creating the connection. Because the connection that will be created is non-\/blocking, the kernel is not able to instantly return if the specified host and port is able to accept a connection.
+
+{\itshape Note\+: A {\ttfamily \mbox{\hyperlink{structredisAsyncContext}{redis\+Async\+Context}}} is not thread-\/safe.}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *c = redisAsyncConnect(\textcolor{stringliteral}{"127.0.0.1"}, 6379);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (c-\/>err) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"Error: \%s\(\backslash\)n"}, c-\/>errstr);}
+\DoxyCodeLine{    \textcolor{comment}{// handle error}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The asynchronous context can hold a disconnect callback function that is called when the connection is disconnected (either because of an error or per user request). This function should have the following prototype\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{void(\textcolor{keyword}{const} \mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *c, \textcolor{keywordtype}{int} status);}
+\end{DoxyCode}
+
+
+On a disconnect, the {\ttfamily status} argument is set to {\ttfamily R\+E\+D\+I\+S\+\_\+\+OK} when disconnection was initiated by the user, or {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR} when the disconnection was caused by an error. When it is {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR}, the {\ttfamily err} field in the context can be accessed to find out the cause of the error.
+
+The context object is always freed after the disconnect callback fired. When a reconnect is needed, the disconnect callback is a good point to do so.
+
+Setting the disconnect callback can only be done once per context. For subsequent calls it will return {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR}. The function to set the disconnect callback has the following prototype\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} redisAsyncSetDisconnectCallback(\mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *ac, redisDisconnectCallback *fn);}
+\end{DoxyCode}
+
+
+{\ttfamily ac-\/$>$data} may be used to pass user data to this callback, the same can be done for redis\+Connect\+Callback. \hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md25}{}\doxysubsubsection{Sending commands and their callbacks}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md25}
+In an asynchronous context, commands are automatically pipelined due to the nature of an event loop. Therefore, unlike the synchronous A\+PI, there is only a single way to send commands. Because commands are sent to Redis asynchronously, issuing a command requires a callback function that is called when the reply is received. Reply callbacks should have the following prototype\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{void(\mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *c, \textcolor{keywordtype}{void} *reply, \textcolor{keywordtype}{void} *privdata);}
+\end{DoxyCode}
+
+
+The {\ttfamily privdata} argument can be used to curry arbitrary data to the callback from the point where the command is initially queued for execution.
+
+The functions that can be used to issue commands in an asynchronous context are\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} redisAsyncCommand(}
+\DoxyCodeLine{  \mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *ac, redisCallbackFn *fn, \textcolor{keywordtype}{void} *privdata,}
+\DoxyCodeLine{  \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, ...);}
+\DoxyCodeLine{\textcolor{keywordtype}{int} redisAsyncCommandArgv(}
+\DoxyCodeLine{  \mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *ac, redisCallbackFn *fn, \textcolor{keywordtype}{void} *privdata,}
+\DoxyCodeLine{  \textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char} **argv, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} *argvlen);}
+\end{DoxyCode}
+
+
+Both functions work like their blocking counterparts. The return value is {\ttfamily R\+E\+D\+I\+S\+\_\+\+OK} when the command was successfully added to the output buffer and {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR} otherwise. Example\+: when the connection is being disconnected per user-\/request, no new commands may be added to the output buffer and {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR} is returned on calls to the {\ttfamily redis\+Async\+Command} family.
+
+If the reply for a command with a {\ttfamily N\+U\+LL} callback is read, it is immediately freed. When the callback for a command is non-\/{\ttfamily N\+U\+LL}, the memory is freed immediately following the callback\+: the reply is only valid for the duration of the callback.
+
+All pending callbacks are called with a {\ttfamily N\+U\+LL} reply when the context encountered an error.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md26}{}\doxysubsubsection{Disconnecting}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md26}
+An asynchronous connection can be terminated using\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} redisAsyncDisconnect(\mbox{\hyperlink{structredisAsyncContext}{redisAsyncContext}} *ac);}
+\end{DoxyCode}
+
+
+When this function is called, the connection is {\bfseries{not}} immediately terminated. Instead, new commands are no longer accepted and the connection is only terminated when all pending commands have been written to the socket, their respective replies have been read and their respective callbacks have been executed. After this, the disconnection callback is executed with the {\ttfamily R\+E\+D\+I\+S\+\_\+\+OK} status and the context object is freed.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md27}{}\doxysubsubsection{Hooking it up to event library $<$em$>$\+X$<$/em$>$}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md27}
+There are a few hooks that need to be set on the context object after it is created. See the {\ttfamily adapters/} directory for bindings to {\itshape libev} and {\itshape libevent}.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md28}{}\doxysubsection{Reply parsing A\+PI}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md28}
+Hiredis comes with a reply parsing A\+PI that makes it easy for writing higher level language bindings.
+
+The reply parsing A\+PI consists of the following functions\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structredisReader}{redisReader}} *redisReaderCreate(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\textcolor{keywordtype}{void} redisReaderFree(\mbox{\hyperlink{structredisReader}{redisReader}} *reader);}
+\DoxyCodeLine{\textcolor{keywordtype}{int} redisReaderFeed(\mbox{\hyperlink{structredisReader}{redisReader}} *reader, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *buf, \textcolor{keywordtype}{size\_t} len);}
+\DoxyCodeLine{\textcolor{keywordtype}{int} redisReaderGetReply(\mbox{\hyperlink{structredisReader}{redisReader}} *reader, \textcolor{keywordtype}{void} **reply);}
+\end{DoxyCode}
+
+
+The same set of functions are used internally by hiredis when creating a normal Redis context, the above A\+PI just exposes it to the user for a direct usage.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md29}{}\doxysubsubsection{Usage}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md29}
+The function {\ttfamily redis\+Reader\+Create} creates a {\ttfamily \mbox{\hyperlink{structredisReader}{redis\+Reader}}} structure that holds a buffer with unparsed data and state for the protocol parser.
+
+Incoming data -- most likely from a socket -- can be placed in the internal buffer of the {\ttfamily \mbox{\hyperlink{structredisReader}{redis\+Reader}}} using {\ttfamily redis\+Reader\+Feed}. This function will make a copy of the buffer pointed to by {\ttfamily buf} for {\ttfamily len} bytes. This data is parsed when {\ttfamily redis\+Reader\+Get\+Reply} is called. This function returns an integer status and a reply object (as described above) via {\ttfamily void $\ast$$\ast$reply}. The returned status can be either {\ttfamily R\+E\+D\+I\+S\+\_\+\+OK} or {\ttfamily R\+E\+D\+I\+S\+\_\+\+E\+RR}, where the latter means something went wrong (either a protocol error, or an out of memory error).
+
+The parser limits the level of nesting for multi bulk payloads to 7. If the multi bulk nesting level is higher than this, the parser returns an error.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md30}{}\doxysubsubsection{Customizing replies}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md30}
+The function {\ttfamily redis\+Reader\+Get\+Reply} creates {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}} and makes the function argument {\ttfamily reply} point to the created {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}} variable. For instance, if the response of type {\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+S\+T\+A\+T\+US} then the {\ttfamily str} field of {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}} will hold the status as a vanilla C string. However, the functions that are responsible for creating instances of the {\ttfamily \mbox{\hyperlink{structredisReply}{redis\+Reply}}} can be customized by setting the {\ttfamily fn} field on the {\ttfamily \mbox{\hyperlink{structredisReader}{redis\+Reader}}} struct. This should be done immediately after creating the {\ttfamily \mbox{\hyperlink{structredisReader}{redis\+Reader}}}.
+
+For example, \href{https://github.com/pietern/hiredis-rb/blob/master/ext/hiredis_ext/reader.c}{\texttt{ hiredis-\/rb}} uses customized reply object functions to create Ruby objects.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md31}{}\doxysubsubsection{Reader max buffer}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md31}
+Both when using the Reader A\+PI directly or when using it indirectly via a normal Redis context, the \mbox{\hyperlink{structredisReader}{redis\+Reader}} structure uses a buffer in order to accumulate data from the server. Usually this buffer is destroyed when it is empty and is larger than 16 KiB in order to avoid wasting memory in unused buffers
+
+However when working with very big payloads destroying the buffer may slow down performances considerably, so it is possible to modify the max size of an idle buffer changing the value of the {\ttfamily maxbuf} field of the reader structure to the desired value. The special value of 0 means that there is no maximum value for an idle buffer, so the buffer will never get freed.
+
+For instance if you have a normal Redis context you can set the maximum idle buffer to zero (unlimited) just with\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{context-\/>reader-\/>maxbuf = 0;}
+\end{DoxyCode}
+
+
+This should be done only in order to maximize performances when working with large payloads. The context should be set back to {\ttfamily R\+E\+D\+I\+S\+\_\+\+R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+B\+UF} again as soon as possible in order to prevent allocation of useless memory.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md32}{}\doxysubsection{S\+S\+L/\+T\+L\+S Support}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md32}
+\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md33}{}\doxysubsubsection{Building}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md33}
+S\+S\+L/\+T\+LS support is not built by default and requires an explicit flag\+: \begin{DoxyVerb}make USE_SSL=1
+\end{DoxyVerb}
+
+
+This requires Open\+S\+SL development package (e.\+g. including header files to be available.
+
+When enabled, S\+S\+L/\+T\+LS support is built into extra {\ttfamily libhiredis\+\_\+ssl.\+a} and {\ttfamily libhiredis\+\_\+ssl.\+so} static/dynamic libraries. This leaves the original libraries unaffected so no additional dependencies are introduced.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md34}{}\doxysubsubsection{Using it}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md34}
+First, you\textquotesingle{}ll need to make sure you include the S\+SL header file\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "hiredis.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "hiredis\_ssl.h"}}
+\end{DoxyCode}
+
+
+S\+SL can only be enabled on a {\ttfamily \mbox{\hyperlink{structredisContext}{redis\+Context}}} connection after the connection has been established and before any command has been processed. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{c = redisConnect(\textcolor{stringliteral}{"localhost"}, 6443);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (c == NULL || c-\/>err) \{}
+\DoxyCodeLine{    \textcolor{comment}{/* Handle error and abort... */}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (redisSecureConnection(c,}
+\DoxyCodeLine{    \textcolor{stringliteral}{"cacertbundle.crt"},     \textcolor{comment}{/* File name of trusted CA/ca bundle file */}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"client\_cert.pem"},      \textcolor{comment}{/* File name of client certificate file */}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"client\_key.pem"},       \textcolor{comment}{/* File name of client private key */}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"redis.mydomain.com"}    \textcolor{comment}{/* Server name to request (SNI) */}}
+\DoxyCodeLine{    ) != REDIS\_OK) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"SSL error: \%s\(\backslash\)n"}, c-\/>errstr);}
+\DoxyCodeLine{    \textcolor{comment}{/* Abort... */}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+You will also need to link against {\ttfamily libhiredis\+\_\+ssl}, {\bfseries{in addition}} to {\ttfamily libhiredis} and add {\ttfamily -\/lssl -\/lcrypto} to satisfy its dependencies.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md35}{}\doxysubsubsection{Open\+S\+S\+L Global State Initialization}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md35}
+Open\+S\+SL needs to have certain global state initialized before it can be used. Using {\ttfamily redis\+Secure\+Connection()} will handle this automatically on the first call.
+
+{\bfseries{If the calling application itself also initializes and uses Open\+S\+SL directly, {\ttfamily redis\+Secure\+Connection()} must not be used.}}
+
+Instead, use {\ttfamily redis\+Initiate\+S\+S\+L()} which also provides greater control over the configuration of the S\+SL connection, as the caller is responsible to create a connection context using {\ttfamily S\+S\+L\+\_\+new()} and configure it as required.\hypertarget{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md36}{}\doxysubsection{A\+U\+T\+H\+O\+RS}\label{md__root_Desktop_Work_dev_8other_hiredis_README_autotoc_md36}
+Hiredis was written by Salvatore Sanfilippo (antirez at gmail) and Pieter Noordhuis (pcnoordhuis at gmail) and is released under the B\+SD license. 

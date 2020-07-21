@@ -1,0 +1,7 @@
+<map id="stg::mdp::mdd::net::s_unix::server::server_socket" name="stg::mdp::mdd::net::s_unix::server::server_socket">
+<area shape="rect" id="node1" title=" " alt="" coords="404,45,575,101"/>
+<area shape="rect" id="node4" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1server_1_1tcp__server.html" title=" " alt="" coords="625,5,774,61"/>
+<area shape="rect" id="node5" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1server_1_1udp__server.html" title=" " alt="" coords="623,85,776,141"/>
+<area shape="rect" id="node2" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1s__unix_1_1unix__socket.html" title="Abstract class for native unix sockets." alt="" coords="199,53,356,94"/>
+<area shape="rect" id="node3" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1socket__t.html" title="Common interface for unix, multicast, etc sockets." alt="" coords="5,53,151,94"/>
+</map>

@@ -1,0 +1,62 @@
+\hypertarget{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender}{}\doxysection{stg\+::mdp\+::mdd\+::dissm\+\_\+server\+::dissm\+\_\+sender Class Reference}
+\label{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender}\index{stg::mdp::mdd::dissm\_server::dissm\_sender@{stg::mdp::mdd::dissm\_server::dissm\_sender}}
+
+
+Server feed channel class.  
+
+
+
+
+{\ttfamily \#include $<$dissamination.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_aee24d276b08b60d70bc90e3123339e02}\label{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_aee24d276b08b60d70bc90e3123339e02}} 
+{\bfseries dissm\+\_\+sender} (const \mbox{\hyperlink{structstg_1_1mdp_1_1mdd_1_1conf_1_1dissemination_1_1broadcast__t}{broadcast\+\_\+t}} \&dconf)
+\item 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_ae68ada605be3f2869910a05102bfcbba}{mcast\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em initialize multicast channels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_a455cbf56b39c866fcc39fd4dda8139b5}{send\+\_\+channel}} (const std\+::string \&tag, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Check tag and send by tag\`{}s multicast channel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_ac56865d4beaa7450a8aa670cc6476b3e}\label{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_ac56865d4beaa7450a8aa670cc6476b3e}} 
+void {\bfseries test\+\_\+send\+\_\+channel} (const std\+::string \&message)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server feed channel class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_ae68ada605be3f2869910a05102bfcbba}\label{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_ae68ada605be3f2869910a05102bfcbba}} 
+\index{stg::mdp::mdd::dissm\_server::dissm\_sender@{stg::mdp::mdd::dissm\_server::dissm\_sender}!mcast\_init@{mcast\_init}}
+\index{mcast\_init@{mcast\_init}!stg::mdp::mdd::dissm\_server::dissm\_sender@{stg::mdp::mdd::dissm\_server::dissm\_sender}}
+\doxysubsubsection{\texorpdfstring{mcast\_init()}{mcast\_init()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::dissm\+\_\+server\+::dissm\+\_\+sender\+::mcast\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+initialize multicast channels 
+
+\mbox{\Hypertarget{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_a455cbf56b39c866fcc39fd4dda8139b5}\label{classstg_1_1mdp_1_1mdd_1_1dissm__server_1_1dissm__sender_a455cbf56b39c866fcc39fd4dda8139b5}} 
+\index{stg::mdp::mdd::dissm\_server::dissm\_sender@{stg::mdp::mdd::dissm\_server::dissm\_sender}!send\_channel@{send\_channel}}
+\index{send\_channel@{send\_channel}!stg::mdp::mdd::dissm\_server::dissm\_sender@{stg::mdp::mdd::dissm\_server::dissm\_sender}}
+\doxysubsubsection{\texorpdfstring{send\_channel()}{send\_channel()}}
+{\footnotesize\ttfamily void stg\+::mdp\+::mdd\+::dissm\+\_\+server\+::dissm\+\_\+sender\+::send\+\_\+channel (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check tag and send by tag\`{}s multicast channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & multicsat channel tag \\
+\hline
+{\em message} & message \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/stg/mdp/mdd/dissemination/server/dissamination/dissamination.\+hpp\end{DoxyCompactItemize}

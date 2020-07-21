@@ -1,0 +1,14 @@
+<map id="stg::ai::noncopyable" name="stg::ai::noncopyable">
+<area shape="rect" id="node1" title=" " alt="" coords="5,253,159,280"/>
+<area shape="rect" id="node2" href="$structstg_1_1ai_1_1nonmovable.html" title=" " alt="" coords="220,5,371,32"/>
+<area shape="rect" id="node3" href="$classstg_1_1ai_1_1xipc__mq_1_1xipc__fetch__t.html" title="XIPC MQ fetcher." alt="" coords="215,57,375,98"/>
+<area shape="rect" id="node4" href="$classstg_1_1ai_1_1xipc__mq_1_1xipc__mman__t.html" title=" " alt="" coords="215,122,375,163"/>
+<area shape="rect" id="node5" href="$classstg_1_1ai_1_1xipc__mq_1_1xipc__t.html" title=" " alt="" coords="215,187,375,229"/>
+<area shape="rect" id="node6" href="$classstg_1_1ai_1_1xipc__mq_1_1xslot__t.html" title=" " alt="" coords="207,253,384,280"/>
+<area shape="rect" id="node7" href="$classstg_1_1ai_1_1xring_1_1xring__fetch__t.html" title="XRING fetcher API." alt="" coords="223,305,367,346"/>
+<area shape="rect" id="node8" href="$classstg_1_1ai_1_1xring_1_1xring__mman__t.html" title=" " alt="" coords="223,370,367,411"/>
+<area shape="rect" id="node11" href="$classstg_1_1ai_1_1xring_1_1xring__t.html" title=" " alt="" coords="220,435,371,477"/>
+<area shape="rect" id="node12" href="$classstg_1_1ai_1_1xring_1_1xslot__t.html" title=" " alt="" coords="218,501,373,528"/>
+<area shape="rect" id="node9" href="$classstg_1_1ai_1_1xring_1_1xring__alloc__t.html" title=" " alt="" coords="449,338,638,379"/>
+<area shape="rect" id="node10" href="$classstg_1_1ai_1_1xring_1_1xring__alloc__t.html" title=" " alt="" coords="432,403,655,445"/>
+</map>

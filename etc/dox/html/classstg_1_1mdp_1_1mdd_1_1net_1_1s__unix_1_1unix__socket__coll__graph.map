@@ -1,4 +1,0 @@
-<map id="stg::mdp::mdd::net::s_unix::unix_socket" name="stg::mdp::mdd::net::s_unix::unix_socket">
-<area shape="rect" id="node1" title="Abstract class for native unix sockets." alt="" coords="5,95,163,136"/>
-<area shape="rect" id="node2" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1socket__t.html" title="Common interface for unix, multicast, etc sockets." alt="" coords="11,5,157,47"/>
-</map>

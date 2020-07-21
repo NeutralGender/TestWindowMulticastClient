@@ -1,5 +1,0 @@
-<map id="stg::mdp::mdd::dissemination::reader::udp_header" name="stg::mdp::mdd::dissemination::reader::udp_header">
-<area shape="rect" id="node1" title=" " alt="" coords="303,39,519,80"/>
-<area shape="rect" id="node2" href="$structstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1udp__port.html" title=" " alt="" coords="5,5,221,47"/>
-<area shape="rect" id="node3" href="$structstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1udp__addr.html" title=" " alt="" coords="5,71,221,112"/>
-</map>

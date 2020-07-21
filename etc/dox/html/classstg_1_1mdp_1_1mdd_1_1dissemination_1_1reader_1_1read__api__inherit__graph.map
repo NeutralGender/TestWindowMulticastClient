@@ -1,4 +1,0 @@
-<map id="stg::mdp::mdd::dissemination::reader::read_api" name="stg::mdp::mdd::dissemination::reader::read_api">
-<area shape="rect" id="node1" title="Reader Interface." alt="" coords="5,5,221,47"/>
-<area shape="rect" id="node2" href="$classstg_1_1mdp_1_1mdd_1_1dissemination_1_1reader_1_1pcap__reader.html" title="Low&#45;level module for pcap files reading." alt="" coords="5,95,221,136"/>
-</map>

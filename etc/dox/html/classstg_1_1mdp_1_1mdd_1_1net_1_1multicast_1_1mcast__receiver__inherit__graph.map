@@ -1,5 +1,0 @@
-<map id="stg::mdp::mdd::net::multicast::mcast_receiver&lt; MCast_Provider &gt;" name="stg::mdp::mdd::net::multicast::mcast_receiver&lt; MCast_Provider &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,184,204,240"/>
-<area shape="rect" id="node2" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1multicast_1_1mcast__socket.html" title=" " alt="" coords="11,95,199,136"/>
-<area shape="rect" id="node3" href="$classstg_1_1mdp_1_1mdd_1_1net_1_1socket__t.html" title="Common interface for unix, multicast, etc sockets." alt="" coords="32,5,177,47"/>
-</map>

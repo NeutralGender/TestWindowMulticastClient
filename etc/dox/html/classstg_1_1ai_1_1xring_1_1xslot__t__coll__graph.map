@@ -1,6 +1,0 @@
-<map id="stg::ai::xring::xslot_t" name="stg::ai::xring::xslot_t">
-<area shape="rect" id="node1" title=" " alt="" coords="58,228,213,255"/>
-<area shape="rect" id="node2" href="$classstg_1_1ai_1_1noncopyable.html" title=" " alt="" coords="5,131,159,158"/>
-<area shape="rect" id="node3" href="$unionstg_1_1ai_1_1xring_1_1xslot__t_1_1____header__type.html" title="Slot header as bitfield." alt="" coords="183,124,325,165"/>
-<area shape="rect" id="node4" href="$structstg_1_1ai_1_1xring_1_1xslot__t_1_1____header__type_1_1____flags__type.html" title=" " alt="" coords="178,5,330,61"/>
-</map>

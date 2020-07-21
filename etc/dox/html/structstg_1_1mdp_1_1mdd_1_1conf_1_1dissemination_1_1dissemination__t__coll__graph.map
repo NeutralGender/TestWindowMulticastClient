@@ -1,6 +1,0 @@
-<map id="stg::mdp::mdd::conf::dissemination::dissemination_t" name="stg::mdp::mdd::conf::dissemination::dissemination_t">
-<area shape="rect" id="node1" title=" " alt="" coords="377,93,612,134"/>
-<area shape="rect" id="node2" href="$structstg_1_1mdp_1_1mdd_1_1conf_1_1dissemination_1_1dissemination__t_1_1retransmission__t.html" title=" " alt="" coords="5,5,228,61"/>
-<area shape="rect" id="node3" href="$structstg_1_1mdp_1_1mdd_1_1conf_1_1dissemination_1_1dissemination__t_1_1quotation__t.html" title=" " alt="" coords="5,85,228,141"/>
-<area shape="rect" id="node4" href="$structstg_1_1mdp_1_1mdd_1_1conf_1_1dissemination_1_1dissemination__t_1_1production__t.html" title=" " alt="" coords="5,165,228,221"/>
-</map>

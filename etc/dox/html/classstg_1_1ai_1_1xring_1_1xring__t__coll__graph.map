@@ -1,8 +1,0 @@
-<map id="stg::ai::xring::xring_t&lt; ProducerType &gt;" name="stg::ai::xring::xring_t&lt; ProducerType &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="823,63,973,105"/>
-<area shape="rect" id="node2" href="$classstg_1_1ai_1_1noncopyable.html" title=" " alt="" coords="18,135,171,161"/>
-<area shape="rect" id="node4" href="$classstg_1_1ai_1_1xring_1_1xring__mman__t.html" title=" " alt="" coords="265,63,409,105"/>
-<area shape="rect" id="node3" href="$classstg_1_1ai_1_1xring_1_1xring__alloc__t.html" title=" " alt="" coords="491,63,713,105"/>
-<area shape="rect" id="node5" href="$classstg_1_1ai_1_1xring_1_1xring__conf.html" title=" " alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node6" href="$classstg_1_1ai_1_1spinlock__t.html" title=" " alt="" coords="27,71,163,97"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="stg::mdp::mdd::conf::db_conf::db_conf" name="stg::mdp::mdd::conf::db_conf::db_conf">
-<area shape="rect" id="node1" title=" " alt="" coords="324,93,476,134"/>
-<area shape="rect" id="node2" href="$structstg_1_1mdp_1_1mdd_1_1conf_1_1db__conf_1_1secure__connection__conf_1_1redis__ssl.html" title=" " alt="" coords="5,5,215,61"/>
-<area shape="rect" id="node3" href="$structstg_1_1mdp_1_1mdd_1_1conf_1_1db__conf_1_1db__endpoint__conf_1_1psql.html" title=" " alt="" coords="26,85,194,141"/>
-<area shape="rect" id="node4" href="$structstg_1_1mdp_1_1mdd_1_1conf_1_1db__conf_1_1db__endpoint__conf_1_1redis.html" title=" " alt="" coords="26,165,194,221"/>
-</map>

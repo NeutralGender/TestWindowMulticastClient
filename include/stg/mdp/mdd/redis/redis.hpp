@@ -179,7 +179,7 @@ public:
      * @param passwd Redis server password
      */
     void auth(const std::string& passwd)
-    { conn.auth("passwd"); }
+    { conn.auth(passwd); }
 
     /**
      * @brief Write 

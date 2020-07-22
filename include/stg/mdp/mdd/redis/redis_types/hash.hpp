@@ -13,6 +13,9 @@ namespace stg::mdp::mdd::redis::type
 
 using stg::mdp::mdd::redis::connection;
 
+/**
+ * @brief Redis Hash record type
+ */
 struct record_t
 {
     record_t(const std::string& key, const std::string& field, const std::string& value):
@@ -27,12 +30,23 @@ struct record_t
     std::string value;
 };
 
+/**
+ * @brief Redis hash data type
+ */
 class hash_t
 {
 public:
     hash_t() {}
     ~hash_t() {}
 
+    /**
+     * @brief Redis HSET function
+     * 
+     * @param conn Hiredis redisContext pointer for connection 
+     * @param key Record`s key
+     * @param field Record`s field
+     * @param value Record`s value
+     */
     void write(connection& conn, const std::string& key, const std::string& field, const std::string& value)
     {
         if( conn.get_connection().has_value() )
@@ -49,6 +63,12 @@ public:
         }
     }
 
+    /**
+     * @brief Redis HGET function
+     * 
+     * @param conn Hiredis redisContext pointer for connection
+     * @return std::vector<record_t> 
+     */
     std::vector<record_t> read(connection& conn)
     {
         std::vector<record_t> record;

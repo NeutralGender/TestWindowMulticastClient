@@ -38,18 +38,28 @@ using stg::ai::path_t;
 
 #include <stg/mdp/mdd/redis/redis.hpp>
 using stg::mdp::mdd::redis::redis_t;
+using stg::mdp::mdd::redis::ssl_auth;
 
 #include <stg/mdp/mdd/redis/redis_types/hash.hpp>
 using stg::mdp::mdd::redis::type::hash_t;
 
 int main()
 {
+    ssl_auth auth = ssl_auth::builder{}.ca_cert("ca")
+                                        .cert("cert")
+                                        .key("key")
+                                        .request("req")
+                                        .build();
+    auth.print();
+
 /*
     redis_t<hash_t> hash( "127.0.0.1", 6379, *(new hash_t) );
     hash.connect();
     hash.write("key", "field", "value");
     hash.read();
 */
+
+/*
     LOG_INSTANTIATE(path_t("log"), "stg.ai.perf.xring");
     LOG_CON(LOG_TAG "%s", "Running XRING perf test");
 
@@ -98,7 +108,7 @@ int main()
     client.create_epoll_fd();
     client.add_channels_epoll( rA, rB );
     client.create_thread();
-
+*/
     return 0;
 }
 

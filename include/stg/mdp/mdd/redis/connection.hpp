@@ -12,9 +12,18 @@
 namespace stg::mdp::mdd::redis
 {
 
+/**
+ * @brief Redis connection class
+ */
 class connection
 {
 public:
+    /**
+     * @brief Construct a new connection object
+     * 
+     * @param hostname Redis server ipv4 address
+     * @param port Redis server port
+     */
     connection(const std::string& hostname, const std::size_t& port):
             hostname(hostname), 
             port(port),
@@ -24,9 +33,18 @@ public:
     ~connection() 
     { redisFree(conn); }
 
+    /**
+     * @brief Get the connection object
+     * 
+     * @return std::optional<redisContext*> 
+     */
     std::optional<redisContext*> get_connection()
     { return ( conn == nullptr ) ? nullptr : conn; }
 
+    /**
+     * @brief Connect to redis server
+     * Use connection parameters received in constructor
+     */
     void connect()
     {
         try
@@ -42,6 +60,15 @@ public:
         }
     }
 
+    /**
+     * @brief SSL secure connection to redis server
+     * Use stunnel4
+     * 
+     * @param CA_crt CA_cert path
+     * @param client_cert Client cert path
+     * @param private_key Client private key path
+     * @param to_request Server to request
+     */
     void ssl_connect(const std::string& CA_crt,
                      const std::string& client_cert,
                      const std::string& private_key,
@@ -62,6 +89,11 @@ public:
         
     }
 
+    /**
+     * @brief Password authentication on redis server
+     * 
+     * @param passwd Redis server password
+     */
     void auth(const std::string& passwd)
     { 
         const char* auth_format = "AUTH %s";

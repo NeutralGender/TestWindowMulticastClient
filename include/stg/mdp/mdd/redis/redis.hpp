@@ -30,6 +30,7 @@ public:
 
     /**
      * @brief Print credentials paths
+     * TODO: Delete over time
      */
     void print()
     {
@@ -146,7 +147,7 @@ class redis_t
 {
 public:
     /**
-     * @brief Construct a new redis t object
+     * @brief Construct a new redis_t object
      * 
      * @param hostname Redis server host ipv4 address
      * @param port Redis server port number
@@ -182,7 +183,7 @@ public:
     { conn.auth(passwd); }
 
     /**
-     * @brief Write 
+     * @brief Write redis_inst data type to redis server
      * 
      * @tparam Args Variadic template std::string
      * @param args Redis command parameters for writing

@@ -41,7 +41,10 @@ using stg::mdp::mdd::redis::redis_t;
 using stg::mdp::mdd::redis::ssl_auth;
 
 #include <stg/mdp/mdd/redis/redis_types/hash.hpp>
-using stg::mdp::mdd::redis::type::hash_t;
+using stg::mdp::mdd::redis::type::hash::hash_t;
+
+#include <stg/mdp/mdd/redis/redis_types/list.hpp>
+using stg::mdp::mdd::redis::type::list::list_t;
 
 int main()
 {
@@ -50,6 +53,13 @@ int main()
     hash.connect();
     hash.write("key", "field", "value");
     hash.read();
+*/
+
+/*
+    redis_t<list_t> list( "127.0.0.1", 6379, *(new list_t) );
+    list.connect();
+    list.write("list", "rec1", "rec2");
+    list.read();
 */
 
 

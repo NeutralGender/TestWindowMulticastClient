@@ -8,7 +8,7 @@
 
 #include <stg/mdp/mdd/redis/connection.hpp>
 
-namespace stg::mdp::mdd::redis::type
+namespace stg::mdp::mdd::redis::type::hash
 {
 
 using stg::mdp::mdd::redis::connection;

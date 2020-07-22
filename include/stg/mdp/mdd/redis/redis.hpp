@@ -186,11 +186,10 @@ public:
      * 
      * @tparam Args Variadic template std::string
      * @param args Redis command parameters for writing
-     * @return auto Vector with redis records
      */
     template<typename ... Args>
-    auto write(Args ... args)
-    { return redis_inst.write(conn, args...); }
+    void write(Args ... args)
+    { redis_inst.write(conn, args...); }
 
     /**
      * @brief Read all data from redis server

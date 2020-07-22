@@ -173,6 +173,11 @@ public:
     void ssl_connection(ssl_auth auth)
     { conn.ssl_connect(auth.CA_rt, auth.client_crt, auth.client_priv_key, auth.serv_to_request); }
 
+    /**
+     * @brief Password authentication on redis server
+     * 
+     * @param passwd Redis server password
+     */
     void auth(const std::string& passwd)
     { conn.auth("passwd"); }
 

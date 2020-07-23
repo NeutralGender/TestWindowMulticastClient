@@ -22,7 +22,7 @@ using stg::mdp::mdd::redis::connection;
 class list_t
 {
 public:
-    list_t() {}
+    list_t() = default;
     ~list_t() {}
 
     /**
@@ -90,17 +90,17 @@ public:
                 // Get all elements by key
                 temp = static_cast<redisReply*>(redisCommand(conn.get_connection().value(),
                                                              lrange_fmt, &reply->element[i]->str[0],
-                                                             (size_t) strlen(reply->element[i]->str))
+                                                             reply->element[i]->len)
                                                 );
 
                 std::list<std::string> list; 
                 for( size_t j = 0; j < temp->elements; ++j )
                 {
                     // Access All elements by key
-                    list.push_back(std::string{temp->element[j]->str, strlen(temp->element[j]->str)});
+                    list.push_back(std::string{temp->element[j]->str, temp->element[j]->len});
                 }
 
-                record.try_emplace(std::string{reply->element[i]->str, strlen(reply->element[i]->str)},
+                record.try_emplace(std::string{reply->element[i]->str, reply->element[i]->len},
                                     list);
 
                 freeReplyObject(temp);

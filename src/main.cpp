@@ -46,6 +46,9 @@ using stg::mdp::mdd::redis::type::hash::hash_t;
 #include <stg/mdp/mdd/redis/redis_types/list.hpp>
 using stg::mdp::mdd::redis::type::list::list_t;
 
+#include <stg/mdp/mdd/redis/redis_types/set.hpp>
+using stg::mdp::mdd::redis::type::set::set_t;
+
 int main()
 {
 /*
@@ -60,6 +63,14 @@ int main()
     list.connect();
     list.write("list", "rec1", "rec2");
     list.read();
+*/
+
+/*
+    redis_t<set_t> set( "127.0.0.1", 6379, *(new set_t) );
+    set.connect();
+
+    auto map = set.read();
+    set.write(map.begin()->first, map.begin()->second);
 */
 
 

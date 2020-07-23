@@ -199,7 +199,7 @@ public:
      * @return auto std::vector with redis server records
      */
     auto read()
-    { redis_inst.read(conn); }
+    { return redis_inst.read(conn); }
 
 protected:
 

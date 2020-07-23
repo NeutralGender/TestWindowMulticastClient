@@ -36,7 +36,7 @@ struct record_t
 class hash_t
 {
 public:
-    hash_t() {}
+    hash_t() = default;
     ~hash_t() {}
 
     /**
@@ -85,18 +85,15 @@ public:
             for( size_t i = 0; i < reply->elements; i++ )
             {
                 temp = static_cast<redisReply*>(redisCommand(conn.get_connection().value(),
-                                                             hget_fmt, &reply->element[i]->str[0],//8)
-                                                             (size_t) strlen(reply->element[i]->str))
+                                                             hget_fmt, &reply->element[i]->str[0],
+                                                             reply->element[i]->len)
                                                 );
 
                 for(size_t j = 0; j < temp->elements; j = j+2)
                 {
-                    record.push_back( record_t( std::string{reply->element[i]->str,
-                                                            strlen(reply->element[i]->str)},
-                                                std::string{temp->element[j]->str, 
-                                                            strlen(temp->element[j]->str) },
-                                                std::string{temp->element[j+1]->str,
-                                                            strlen(temp->element[j+1]->str) }
+                    record.push_back( record_t( std::string{reply->element[i]->str, reply->element[i]->len},
+                                                std::string{temp->element[j]->str, temp->element[j]->len},
+                                                std::string{temp->element[j+1]->str, temp->element[j+1]->len}
                                             ) );
                 }
 

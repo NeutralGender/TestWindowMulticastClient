@@ -2,11 +2,13 @@
 
 #include <exception>
 
+#include <winsock2.h>
+#include <winsock.h>
+/** winsock
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <unistd.h>
-
-#include <stg/ai/log.hpp>
+*/
 
 namespace stg::mdp::mdd::net
 {
@@ -21,7 +23,7 @@ public:
     {}
 
     virtual ~socket_t() 
-    { close( sockfd ); }
+    { closesocket( sockfd ); }
 
     [[nodiscard]] bool create_socket(int socket_type)
     {
@@ -29,7 +31,6 @@ public:
 
         if( ( sockfd = socket( AF_INET, socket_type, 0 ) ) < 0 )
         {
-            LOG_CON(LOG_TAG "%s; errno: %d\n", "Cannot Create Socket", errno);
             return false;
         }
 

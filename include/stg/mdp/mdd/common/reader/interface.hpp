@@ -34,7 +34,7 @@ public:
      * @param data_string container for <address:data> from file
      * @return void 
      */
-    virtual std::tuple<u_int32_t, u_int8_t*> read() = 0;
+    virtual std::tuple<uint32_t, uint8_t*> read() = 0;
 
     /**
      * @brief Get the data object

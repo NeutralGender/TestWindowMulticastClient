@@ -1,21 +1,50 @@
 #include <iostream>
-#include <filesystem>
 
-namespace fs = std::filesystem;
+// MUST BEFORE winsock2.h
+#define WINVER _WIN32_WINNT_WIN7
+#define _WIN32_WINNT _WIN32_WINNT_WIN7
+//#define _GLIBCXX_USE_NANOSLEEP
+
+// Need to link with Ws2_32.lib
+#pragma comment(lib, "ws2_32.lib")
+
+//#pragma comment (lib,"ws2_32.lib")
+
+/*
+#include <stg/mdp/mdd/common/reader/reader.hpp>
+#include <stg/mdp/mdd/common/reader/filesys/json_reader.hpp>
+
+using stg::mdp::mdd::common::reader::reader_t;
+using stg::mdp::mdd::common::fs::json_reader;
+
+int main()
+{
+    const char* prod_path = "etc/json/dissemination/prod.conf.json";
+    
+    const char* mcsat_path = "clientMDP/etc/json/mcast_conf.json";
+    const char* pcap_path = "capture/multicast.pcapng";
+    const char* flood = "capture/flooding.pcapng";
+
+    reader_t<json_reader> prod_reader( *(new json_reader ) );
+    if( ! prod_reader.open( prod_path ) )
+    {
+        std::cout << "Cannot open prod etc" << std::endl;
+        return false;
+    }
+    prod_reader.read();
+
+    std::cout << prod_reader.get_data() << std::endl;
+
+    return 0;
+}
+*/
+
 
 #include <stg/mdp/mdd/conf/mcast/mcast_conf.hpp>
-using stg::mdp::mdd::mcast::conf::mcast_conf;
+using stg::mdp::mdd::conf::mcast::mcast_conf;
 
 #include <stg/mdp/mdd/conf/dissemination/production.hpp>
 using stg::mdp::mdd::conf::dissemination::diss_prod_conf;
-
-// xring
-#include <stg/ai/xring/xring.hpp>
-using stg::ai::xring::xring_t;
-using stg::ai::xring::xring_conf;
-using stg::ai::xring::xslot_t;
-using stg::ai::xring::xring_fetch_t;
-using stg::ai::xring::xring_err;
 
 #include <stg/mdp/mdd/mcast_client/client/dissemination/dissemination.hpp>
 using stg::mdp::mdd::mcast_client::client::dissemination::dissm_receiver;
@@ -32,98 +61,101 @@ using stg::mdp::mdd::common::fs::json_reader;
 #include <stg/mdp/mdd/common/reader/reader.hpp>
 using stg::mdp::mdd::common::reader::reader_t;
 
-#define LOG_TAG "[stg.ai.perf.xring] "
-#include <stg/ai/log.hpp>
-using stg::ai::path_t;
+#include <stg/mdp/mdd/common/json_gnr/writer/writer.hpp>
+using stg::mdp::mdd::common::writer::writer_t;
 
-#include <stg/mdp/mdd/redis/redis.hpp>
-using stg::mdp::mdd::redis::redis_t;
-using stg::mdp::mdd::redis::ssl_auth;
+#include <stg/mdp/mdd/common/json_gnr/json_generator/json_grt.hpp>
+using stg::mdp::mdd::common::json_gnr::gnr::json_grt;
 
-#include <stg/mdp/mdd/redis/redis_types/hash.hpp>
-using stg::mdp::mdd::redis::type::hash::hash_t;
 
-#include <stg/mdp/mdd/redis/redis_types/list.hpp>
-using stg::mdp::mdd::redis::type::list::list_t;
+// Received package Counter 
+std::size_t count = 0;
 
-#include <stg/mdp/mdd/redis/redis_types/set.hpp>
-using stg::mdp::mdd::redis::type::set::set_t;
+BOOL WINAPI consoleHandler(DWORD signal)
+{
+    if (signal == CTRL_C_EVENT)
+    {
+        printf("Ctrl-Break handled\n"); // do cleanup
+        std::cout << count << std::endl;
+        exit(0);
+    }
+
+    return TRUE;
+}
 
 int main()
 {
-/*
-    redis_t<hash_t> hash( "127.0.0.1", 6379, *(new hash_t) );
-    hash.connect();
-    hash.write("key", "field", "value");
-    hash.read();
-*/
-
-/*
-    redis_t<list_t> list( "127.0.0.1", 6379, *(new list_t) );
-    list.connect();
-    list.write("list", "rec1", "rec2");
-    list.read();
-*/
-
-/*
-    redis_t<set_t> set( "127.0.0.1", 6379, *(new set_t) );
-    set.connect();
-
-    auto map = set.read();
-    set.write(map.begin()->first, map.begin()->second);
-*/
-
-
-    LOG_INSTANTIATE(path_t("log"), "stg.ai.perf.xring");
-    LOG_CON(LOG_TAG "%s", "Running XRING perf test");
-
-    LOG_FLUSH;
-    LOG_AUDIT(LOG_TAG "%s", "Running XRING perf test" );
-    LOG_FLUSH;
-    LOG_CON_FORCE(LOG_TAG "%s", "Running XRING perf test");
-    LOG_CON_FORCE(LOG_TAG "%s", CON_RED("Press Ctrl-Break to terminate..."));
-
-    const fs::path workdir = fs::current_path();
-    const fs::path prod_path = workdir / "clientMDP" / "etc" / "json" / "dissemination" / "prod.conf.json";
+    [[ maybe_unused ]] const char* prod_path = "etc/json/dissemination/prod.conf.json";
+    [[ maybe_unused ]] const char* prod_addr = "etc/json/dissemination/prod_addr.json";
     
-    const fs::path mcsat_path = workdir / "clientMDP" / "etc" / "json" / "mcast_conf.json";
-    const fs::path pcap_path = workdir / "capture" / "multicast.pcapng";
-    const fs::path flood = workdir / "capture" / "flooding.pcapng";
-
-    reader_t<json_reader> prod_reader( *(new json_reader ) );
-    if( not prod_reader.open(prod_path.c_str()) )
-        return false;
-    prod_reader.read();
+    [[ maybe_unused ]] const char* mcsat_path = "etc/json/mcast_conf.json";
+    [[ maybe_unused ]] const char* pcap_path = "capture/multicast.pcapng";
+    [[ maybe_unused ]] const char* flood = "capture/flooding.pcapng";
 
     reader_t<json_reader> mcast_reader( *(new json_reader ) );
 
-    if( not mcast_reader.open(mcsat_path.c_str()) )
-      return false;
-
+    if( ! mcast_reader.open(mcsat_path) )
+    {
+        std::cout << "Cannot open mcast\n";
+        return false;
+    }
     mcast_reader.read();
 
-    diss_prod_conf dprod( prod_reader.get_data() );
     mcast_conf mconf( mcast_reader.get_data() );
 
-    xring_conf xconf;
-    xconf.setup_capacity( 200 );
+    {
+        writer_t w(prod_addr);
 
-    xring_t<> rng ( xconf, "" );
+        std::string ip_add = ( mconf.use_addr == 1 ) ? mconf.ip_addr1 : mconf.ip_addr2;
 
-    dissm_receiver<mcast_type::ANY> rA(dprod.prod_a.channels);
-    if( not rA.init(dprod.prod_a.channels, mconf ) )
+        json_grt gnrt;
+        gnrt.build_config(mconf.asm_recv.local, 
+                          mconf.json_addr, 
+                          mconf.port,
+                          ip_add);
+        gnrt.write();
+    }
+
+    reader_t<json_reader> prod_reader( *(new json_reader ) );
+    if( ! prod_reader.open(prod_addr) )
+    {
+        std::cout << "Cannot open prod\n";
+        return false;
+    }
+    prod_reader.read();
+
+    WSADATA wsaData;
+
+	if (WSAStartup(0x0101, &wsaData)) 
+	{
+		printf ("winsock not bi initialized !\n");
+		WSACleanup();
+	}
+	else printf("Winsock initial OK !!!!\n");
+
+//
+    if (!SetConsoleCtrlHandler(consoleHandler, TRUE)) {
+        printf("\nERROR: Could not set control handler"); 
+        return 1;
+    }
+//
+
+    diss_prod_conf prod( prod_reader.get_data() );
+
+    dissm_receiver<mcast_type::ANY> rA(prod.a.site);
+    if( ! rA.init(prod.a.site, mconf ) )
         return false;
 
-    dissm_receiver<mcast_type::ANY> rB(dprod.prod_b.channels);
-    if( not rB.init(dprod.prod_b.channels, mconf ) )
-        return false;
+    client_t client(mconf.json_addr);
+    client.add_channels_epoll( rA );
+    client.create_thread(count);
 
-    client_t client(6, rng);
-    client.create_epoll_fd();
-    client.add_channels_epoll( rA, rB );
-    client.create_thread();
+/*
+    if (WSACleanup())
+		printf("Error Cleapir\n");
+	else
+		printf("Cleapir Good !!!!!\n");
+*/
 
     return 0;
 }
-
-#undef LOG_TAG

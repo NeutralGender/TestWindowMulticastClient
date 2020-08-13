@@ -12,7 +12,6 @@ enum class destruct_method{ join, detach };
 
 /**
  * @class RAII thread channel class
- * 
  */
 class thread_channel
 {

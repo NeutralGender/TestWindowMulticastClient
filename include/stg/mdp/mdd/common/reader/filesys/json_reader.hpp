@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stg/ai/ai.hpp>
+#include <js.hpp>
 
 #include <string>
 #include <fstream>
@@ -8,6 +8,8 @@
 
 namespace stg::mdp::mdd::common::fs
 {
+
+using json = nlohmann::json;
 
 class json_reader
 {
@@ -52,7 +54,7 @@ private:
 bool json_reader::open(const std::string& path)
 {
     in.open(path, std::ios_base::in);
-    return ( not in.is_open() ) ? false : true;
+    return ( ! in.is_open() ) ? false : true;
 }
 
 const json& json_reader::read()

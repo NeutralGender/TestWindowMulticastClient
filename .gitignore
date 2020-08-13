@@ -1,3 +1,6 @@
 ./etc/cmake/
 ./etc/dox/
 ./.gitignore
+.vscode/
+.git/
+json/

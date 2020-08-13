@@ -1,10 +1,13 @@
 #pragma once
 
 #include <string>
+
+/* WINSOCK
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+*/
 
 #include <stg/mdp/mdd/net/socket.hpp>
 
@@ -26,8 +29,6 @@ public:
 
 protected:
     const std::size_t port;
-    struct sockaddr_in sock_sockaddr;
-
 };
 
 } // namespace stg::mdp::mdd::net::multicast

@@ -1,34 +1,29 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "shell",
-			"label": "ClientBuild",
-			"command": "/usr/bin/g++",
-			"args": [
-				"-g",
-				"-std=c++17",
-
-				"-I/${workspaceFolder}/include/",
-				"${workspaceFolder}/src/main.cpp",
-
-				"-pthread",
-				"-lboost_system",
-				"-lpcap",
-
-				"-o",
-				"${workspaceFolder}/main"
-			],
-			"options": {
-				"cwd": "/usr/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		}
-	]
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "C:/Cygwin/bin/gcc.exe",
+            "args": [
+                "-std=c++17",
+                "-pedantic",
+                "-Wall",
+                "-I${workspaceFolder}/include",
+                "${workspaceFolder}/src/main.cpp",
+                "-lws2_32",
+                //"-lpthread",
+                "-lstdc++",
+                "-o",
+                "${workspaceFolder}/main.exe"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }

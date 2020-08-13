@@ -7,7 +7,7 @@
         },
         "client": {
             "ASM": {
-                "local": "192.168.56.108",
+                "local": "192.168.56.121",
                 "group": "225.1.1.1"
             },
             "SSM": {
@@ -17,5 +17,15 @@
             },
             "port": 8001
         }
-    }
+    },
+
+    "address": 100, "docADDR": "Number of groups in feed",
+    "port": 55630,
+
+    "core" : 1, "docCORE": "Active core count",
+    "thread" : 1, "docTHREAD": "Active core`s threads",
+    
+    "use_addr" : 2, "docUSE": "Set 1 for ip_addr1, 2 for ip_addr2",
+    "ip_addr1": "233.46.176.0",
+    "ip_addr2": "233.46.186.0"
 }
